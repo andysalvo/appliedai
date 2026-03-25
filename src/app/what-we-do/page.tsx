@@ -56,13 +56,13 @@ export default function WhatWeDoPage() {
                 Events and Programming
               </h2>
               <p className="text-text-muted leading-relaxed mb-4">
-                We host guest speakers, run tool walkthroughs, and discuss how AI is changing
-                business and the workplace. Meetings are open to all Penn State students regardless
-                of major or experience.
+                We will host guest speakers, run tool walkthroughs, and discuss how AI is changing
+                business and the workplace. Meetings will be open to all Penn State students
+                regardless of major or experience.
               </p>
               <p className="text-text-muted leading-relaxed">
-                Past topics include prompt engineering, AI in finance, building with Claude Code,
-                and how companies are adopting AI tools internally.
+                Events and regular meetings begin Fall 2026 at University Park. Join the mailing
+                list or GroupMe to get notified when we launch.
               </p>
             </SlideIn>
 
@@ -219,8 +219,8 @@ export default function WhatWeDoPage() {
               Ready to get involved?
             </h2>
             <p className="text-text-muted mb-10 max-w-md mx-auto">
-              Join the GroupMe, come to a meeting, or sign up for the mailing list. No application.
-              No prerequisites.
+              Join the GroupMe or sign up for the mailing list. Regular meetings begin Fall 2026 at
+              University Park. No application. No prerequisites.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <PressableButton

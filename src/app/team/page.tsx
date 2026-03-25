@@ -123,8 +123,8 @@ export default function TeamPage() {
                       Step 1: Join the GroupMe
                     </p>
                     <p className="text-white/60 leading-relaxed mb-4">
-                      This is where everything happens. Meetings, announcements, project updates,
-                      and general discussion all go through GroupMe.
+                      This is where everything will happen starting Fall 2026. Announcements,
+                      meeting info, project updates, and general discussion all go through GroupMe.
                     </p>
                     <PressableButton
                       href="https://groupme.com/join_group/111640691/x4UBh7SL"
@@ -161,10 +161,13 @@ export default function TeamPage() {
                     <span className="font-display text-pugh-blue text-lg font-bold">3</span>
                   </div>
                   <div>
-                    <p className="font-display text-lg font-semibold mb-2">Step 3: Show up</p>
+                    <p className="font-display text-lg font-semibold mb-2">
+                      Step 3: Show up in Fall 2026
+                    </p>
                     <p className="text-white/60 leading-relaxed">
-                      Meetings are open to all Penn State students regardless of major or
-                      experience. Come with questions, ideas, or just curiosity. That is enough.
+                      Regular meetings start Fall 2026 at University Park. Open to all Penn State
+                      students regardless of major or experience. Come with questions, ideas, or
+                      just curiosity. That is enough.
                     </p>
                   </div>
                 </AnimatedCard>

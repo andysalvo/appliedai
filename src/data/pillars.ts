@@ -11,7 +11,7 @@ export const pillars: Pillar[] = [
   {
     title: 'Events and Programming',
     description:
-      'We host guest speakers, run tool walkthroughs, and discuss how AI is changing business and the workplace. Meetings are open to all Penn State students regardless of major or experience.',
+      'Guest speakers, tool walkthroughs, and discussions about how AI is changing business and the workplace. Starting Fall 2026 at University Park. Open to all Penn State students.',
     accent: 'border-t-navy',
     iconBg: 'bg-navy/[0.08]',
     icon: 'calendar',
