@@ -112,9 +112,9 @@ export default function GetEquippedPage() {
                 is your psu.edu email.
               </p>
               <p className="text-text-muted leading-relaxed">
-                We put this page together because most students do not know half of this exists.
-                None of these are affiliated with Applied AI. They are just resources that every
-                Penn State student should know about.
+                This list will keep growing. We plan to build systems that keep students in the loop
+                on what they have access to as new tools become available. None of these are
+                affiliated with Applied AI. They are just resources worth knowing about.
               </p>
             </div>
           </FadeIn>
