@@ -8,7 +8,7 @@ export interface NavItem {
 export const navigation: NavItem[] = [
   { label: 'What We Do', href: '/what-we-do', isAnchor: false },
   { label: 'Labs', href: '/labs', isAnchor: false },
-  { label: 'Team', href: '/team', isAnchor: false },
   { label: 'Explore AI', href: '/explore', isAnchor: false },
+  { label: 'Get Equipped', href: '/get-equipped', isAnchor: false },
   { label: 'Join', href: '/team', isAnchor: false, isCta: true },
 ]
