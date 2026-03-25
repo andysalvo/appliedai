@@ -11,6 +11,16 @@ import {
   Code2,
   Layers,
   Terminal,
+  Sparkles,
+  BookOpen,
+  GraduationCap,
+  GitBranch,
+  Globe,
+  Wind,
+  Image,
+  AudioLines,
+  Music,
+  Paintbrush,
 } from 'lucide-react'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { StaggerGrid, StaggerItem } from '@/components/ui/StaggerGrid'
@@ -26,12 +36,22 @@ export const metadata: Metadata = {
 const toolIcons: Record<string, typeof MessageSquare> = {
   ChatGPT: MessageSquare,
   Claude: Brain,
+  Gemini: Sparkles,
+  'GitHub Copilot': GitBranch,
   Perplexity: Search,
+  NotebookLM: BookOpen,
+  Elicit: GraduationCap,
   Openclaw: Blocks,
   Ollama: HardDrive,
   Cursor: Code2,
   v0: Layers,
   Codex: Terminal,
+  'Claude Code': Terminal,
+  Replit: Globe,
+  Windsurf: Wind,
+  Midjourney: Image,
+  ElevenLabs: AudioLines,
+  Suno: Music,
 }
 
 export default function ExplorePage() {
@@ -39,6 +59,7 @@ export default function ExplorePage() {
     assistant: tools.filter((t) => t.category === 'assistant'),
     research: tools.filter((t) => t.category === 'research'),
     developer: tools.filter((t) => t.category === 'developer'),
+    creative: tools.filter((t) => t.category === 'creative'),
   }
 
   return (
@@ -161,6 +182,39 @@ export default function ExplorePage() {
 
           <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {grouped.developer.map((tool) => (
+              <StaggerItem key={tool.name}>
+                <ToolCard tool={tool} />
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
+        </div>
+      </section>
+
+      {/* ─── CREATIVE ─── */}
+      <section className="py-20 md:py-28 bg-surface-alt relative overflow-hidden">
+        <div className="absolute bottom-[20%] left-[5%] w-[300px] h-[300px] rounded-full bg-pa-sky/[0.04] blur-[80px]" />
+
+        <div className="relative max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-10">
+              <div
+                className={`w-10 h-10 rounded-lg ${categories.creative.bg} flex items-center justify-center`}
+              >
+                <Paintbrush size={18} className="text-navy" />
+              </div>
+              <div>
+                <h2 className="font-display text-navy text-xl font-semibold">
+                  {categories.creative.label}
+                </h2>
+                <p className="text-text-muted text-sm">
+                  Generate images, voice, music. AI as a creative tool.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {grouped.creative.map((tool) => (
               <StaggerItem key={tool.name}>
                 <ToolCard tool={tool} />
               </StaggerItem>
