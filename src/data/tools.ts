@@ -4,7 +4,13 @@ export interface Tool {
   description: string
   capabilities: string[]
   url: string
-  category?: string
+  category: 'assistant' | 'developer' | 'research'
+}
+
+export const categories = {
+  assistant: { label: 'AI Assistants', accent: 'border-t-navy', bg: 'bg-navy/[0.06]' },
+  research: { label: 'Research', accent: 'border-t-beaver-blue', bg: 'bg-beaver-blue/[0.06]' },
+  developer: { label: 'Developer Tools', accent: 'border-t-pugh-blue', bg: 'bg-pugh-blue/[0.12]' },
 }
 
 export const tools: Tool[] = [
@@ -19,6 +25,7 @@ export const tools: Tool[] = [
       'Image generation with DALL-E',
     ],
     url: 'https://chat.openai.com',
+    category: 'assistant',
   },
   {
     name: 'Claude',
@@ -31,6 +38,7 @@ export const tools: Tool[] = [
       'Research synthesis',
     ],
     url: 'https://claude.ai',
+    category: 'assistant',
   },
   {
     name: 'Perplexity',
@@ -43,6 +51,7 @@ export const tools: Tool[] = [
       'Collections for organizing research',
     ],
     url: 'https://perplexity.ai',
+    category: 'research',
   },
   {
     name: 'Openclaw',
@@ -55,6 +64,7 @@ export const tools: Tool[] = [
       'Run agents locally or in the cloud',
     ],
     url: 'https://openclaw.com',
+    category: 'developer',
   },
   {
     name: 'Ollama',
@@ -67,6 +77,7 @@ export const tools: Tool[] = [
       'Fine-tune models on your data',
     ],
     url: 'https://ollama.com',
+    category: 'developer',
   },
   {
     name: 'Cursor',
@@ -79,6 +90,7 @@ export const tools: Tool[] = [
       'Built-in chat with your code as context',
     ],
     url: 'https://cursor.com',
+    category: 'developer',
   },
   {
     name: 'v0',
@@ -91,6 +103,7 @@ export const tools: Tool[] = [
       'Iterate on designs conversationally',
     ],
     url: 'https://v0.dev',
+    category: 'developer',
   },
   {
     name: 'Codex',
@@ -103,5 +116,6 @@ export const tools: Tool[] = [
       'Generate pull requests automatically',
     ],
     url: 'https://openai.com/codex',
+    category: 'developer',
   },
 ]
