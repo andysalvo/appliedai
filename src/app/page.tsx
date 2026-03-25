@@ -192,16 +192,16 @@ export default function Home() {
                 Penn State and turn them into projects.
               </p>
               <p className="text-text-muted leading-relaxed mb-8">
-                From here, Labs is where members build with LangChain, run retrieval-augmented
-                generation pipelines, experiment with vector databases, and deploy agents that
-                actually do things.
+                Members work with Claude Code, Next.js, GitHub Actions, Google Workspace
+                integrations, and the same tools that real teams ship with. No theory. Just
+                building.
               </p>
               <PressableButton
-                href="https://andysalvo.github.io/smealstudentaihub/"
+                href="/labs"
                 className="inline-flex items-center gap-2 text-beaver-blue font-medium text-sm"
               >
-                See the Student AI Hub
-                <ExternalLink size={14} />
+                Learn more about Labs
+                <ArrowRight size={14} />
               </PressableButton>
             </SlideIn>
 
