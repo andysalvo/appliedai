@@ -7,7 +7,7 @@ export const siteMetadata: Metadata = {
     template: '%s | Applied AI',
   },
   description:
-    'The Applied AI Club at University Park helps students understand how AI is used in the real world.',
+    'The Applied AI Club at Penn State helps students understand how AI is used in the real world.',
   keywords: [
     'AI',
     'artificial intelligence',
@@ -33,6 +33,6 @@ export const siteMetadata: Metadata = {
     siteName: 'Applied AI',
     title: 'Applied AI',
     description:
-      'The Applied AI Club at University Park helps students understand how AI is used in the real world.',
+      'The Applied AI Club at Penn State helps students understand how AI is used in the real world.',
   },
 }

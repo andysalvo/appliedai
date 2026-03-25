@@ -165,7 +165,7 @@ export default function TeamPage() {
                       Step 3: Show up in Fall 2026
                     </p>
                     <p className="text-white/60 leading-relaxed">
-                      Regular meetings start Fall 2026 at University Park. Open to all Penn State
+                      Regular meetings start Fall 2026 at Penn State. Open to all Penn State
                       students regardless of major or experience. Come with questions, ideas, or
                       just curiosity. That is enough.
                     </p>

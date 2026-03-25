@@ -1,6 +1,6 @@
 # AI Agent Instructions: Applied AI Club
 
-**Project:** Applied AI Club at University Park -- the official website for the Applied AI Club, a student organization at Penn State.
+**Project:** Applied AI Club at Penn State -- the official website for the Applied AI Club, a student organization at Penn State.
 
 **Site:** https://andysalvo.github.io/appliedai/
 
@@ -233,7 +233,7 @@ The "Source" column distinguishes website submissions (`"website"`) from other s
 
 ## Penn State Branding
 
-- **Penn State Discover:** "Applied AI Club at University Park"
+- **Penn State Discover:** "Applied AI Club at Penn State"
 - **General use:** "Applied AI"
 - **Never:** "Penn State Applied AI" (violates AD07 -- institution name cannot precede org name)
 

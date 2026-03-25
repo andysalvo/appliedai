@@ -92,7 +92,7 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-xs text-white/30 leading-relaxed">
             This is a student organization website and does not represent official Penn State
-            positions. &copy; {year} Applied AI Club at University Park.
+            positions. &copy; {year} Applied AI Club at Penn State.
           </p>
         </div>
       </div>

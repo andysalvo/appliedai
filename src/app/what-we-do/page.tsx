@@ -61,8 +61,8 @@ export default function WhatWeDoPage() {
                 regardless of major or experience.
               </p>
               <p className="text-text-muted leading-relaxed">
-                Events and regular meetings begin Fall 2026 at University Park. Join the mailing
-                list or GroupMe to get notified when we launch.
+                Events and regular meetings begin Fall 2026 at Penn State. Join the mailing list or
+                GroupMe to get notified when we launch.
               </p>
             </SlideIn>
 
@@ -220,7 +220,7 @@ export default function WhatWeDoPage() {
             </h2>
             <p className="text-text-muted mb-10 max-w-md mx-auto">
               Join the GroupMe or sign up for the mailing list. Regular meetings begin Fall 2026 at
-              University Park. No application. No prerequisites.
+              Penn State. No application. No prerequisites.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <PressableButton

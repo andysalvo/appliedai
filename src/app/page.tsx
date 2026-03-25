@@ -13,7 +13,7 @@ const sections = [
     icon: Calendar,
     title: 'Events and Programming',
     description:
-      'Guest speakers, tool walkthroughs, and discussions about how AI is changing business and the workplace. Starting Fall 2026 at University Park.',
+      'Guest speakers, tool walkthroughs, and discussions about how AI is changing business and the workplace. Starting Fall 2026 at Penn State.',
     href: '/what-we-do',
     accent: 'border-t-navy',
     iconBg: 'bg-navy/[0.08]',
@@ -117,9 +117,8 @@ export default function Home() {
                 </p>
               </div>
               <p className="mt-8 text-text-muted text-base leading-relaxed max-w-2xl">
-                The Applied AI Club at University Park brings together students who are curious
-                about AI and want to learn and build together. Regular meetings and events begin
-                Fall 2026.
+                The Applied AI Club at Penn State brings together students who are curious about AI
+                and want to learn and build together. Regular meetings and events begin Fall 2026.
               </p>
             </div>
           </FadeIn>
