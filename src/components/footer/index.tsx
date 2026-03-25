@@ -9,7 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <p className="font-display text-2xl font-bold">Applied AI</p>
+            <Link href="/" className="font-display text-2xl font-bold hover:text-white">
+              Applied AI
+            </Link>
             <p className="text-pugh-blue/80 mt-1 text-sm">at Penn State</p>
             <p className="text-white/50 mt-4 text-sm leading-relaxed max-w-xs">
               Building a community where students learn how AI is used in the real world and explore
@@ -23,36 +25,30 @@ export function Footer() {
               Navigate
             </p>
             <div className="space-y-3">
-              <a
-                href="#what-we-do"
+              <Link
+                href="/what-we-do"
                 className="block text-sm text-white/70 hover:text-white transition-colors"
               >
                 What We Do
-              </a>
-              <a
-                href="#labs"
+              </Link>
+              <Link
+                href="/labs"
                 className="block text-sm text-white/70 hover:text-white transition-colors"
               >
                 Labs
-              </a>
-              <a
-                href="#team"
+              </Link>
+              <Link
+                href="/team"
                 className="block text-sm text-white/70 hover:text-white transition-colors"
               >
                 Team
-              </a>
+              </Link>
               <Link
                 href="/explore"
                 className="block text-sm text-white/70 hover:text-white transition-colors"
               >
                 Explore AI
               </Link>
-              <a
-                href="#join"
-                className="block text-sm text-white/70 hover:text-white transition-colors"
-              >
-                Join
-              </a>
             </div>
           </div>
 

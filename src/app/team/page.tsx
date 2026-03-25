@@ -144,13 +144,19 @@ export default function TeamPage() {
                   </div>
                   <div>
                     <p className="font-display text-lg font-semibold mb-2">
-                      Step 2: Read the pinned message
+                      Step 2: Register on Discover
                     </p>
-                    <p className="text-white/60 leading-relaxed">
-                      The pinned message in GroupMe has everything you need to know: meeting times,
-                      location, what we are working on, and how to get started. Read it before your
-                      first meeting.
+                    <p className="text-white/60 leading-relaxed mb-4">
+                      Officially join the club through Penn State Discover, the university org
+                      management platform.
                     </p>
+                    <PressableButton
+                      href="https://discover.psu.edu/organization/appliedai"
+                      className="inline-flex items-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3 rounded-xl font-semibold text-sm"
+                    >
+                      Register on Discover
+                      <ExternalLink size={14} />
+                    </PressableButton>
                   </div>
                 </AnimatedCard>
               </StaggerItem>
@@ -162,12 +168,12 @@ export default function TeamPage() {
                   </div>
                   <div>
                     <p className="font-display text-lg font-semibold mb-2">
-                      Step 3: Show up in Fall 2026
+                      Step 3: Follow the pinned message
                     </p>
                     <p className="text-white/60 leading-relaxed">
-                      Regular meetings start Fall 2026 at Penn State. Open to all Penn State
-                      students regardless of major or experience. Come with questions, ideas, or
-                      just curiosity. That is enough.
+                      The pinned message in GroupMe has instructions for getting started. Regular
+                      meetings begin Fall 2026 at Penn State. Open to all students regardless of
+                      major or experience.
                     </p>
                   </div>
                 </AnimatedCard>
