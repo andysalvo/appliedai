@@ -88,6 +88,10 @@ appliedai/
       lighthouse.yml
       codeql.yml
     copilot-instructions.md
+    roster.json                   # Member roster for onboarding (name, role, briefing)
+  dashboard/
+    index.html                    # 3D onboarding dashboard (Three.js, standalone)
+    data.json                     # Dashboard data (mailing list count, announcements)
   .claude/
     settings.json               # Bash security boundaries
   .husky/
