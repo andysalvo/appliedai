@@ -43,7 +43,7 @@ export default function TeamPage() {
       </section>
 
       {/* ─── TEAM GRID ─── */}
-      <section className="pb-14 md:pb-20">
+      <section className="py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member) => (
