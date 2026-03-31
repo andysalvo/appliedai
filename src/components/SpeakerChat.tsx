@@ -86,14 +86,14 @@ export function SpeakerChat() {
   const hasMessages = messages.length > 0
 
   return (
-    <div className="rounded-2xl overflow-hidden bg-[#0a1628]/95 backdrop-blur-xl border border-white/[0.08] shadow-2xl shadow-navy/30">
+    <div className="rounded-2xl overflow-hidden bg-beaver-blue/90 backdrop-blur-xl border border-white/[0.12] shadow-2xl shadow-beaver-blue/20">
       {/* Top shimmer */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
 
       {/* Header */}
       <div className="flex items-center gap-3 px-5 py-4 border-b border-white/[0.06]">
-        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-pugh-blue/30 to-beaver-blue/20 border border-white/[0.08] flex items-center justify-center">
-          <Sparkles size={15} className="text-pugh-blue" />
+        <div className="w-9 h-9 rounded-xl bg-white/[0.1] border border-white/[0.1] flex items-center justify-center">
+          <Sparkles size={15} className="text-white/70" />
         </div>
         <div className="flex-1">
           <p className="text-white/80 text-sm font-medium">Ask about speaking</p>
@@ -123,7 +123,7 @@ export function SpeakerChat() {
                 onClick={() => sendMessage(q)}
                 className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] hover:border-white/[0.12] transition-all text-white/50 hover:text-white/80 text-sm w-full text-left cursor-pointer"
               >
-                <span className="w-1 h-1 rounded-full bg-pugh-blue/50 group-hover:bg-pugh-blue transition-colors shrink-0" />
+                <span className="w-1 h-1 rounded-full bg-white/30 group-hover:bg-white/60 transition-colors shrink-0" />
                 {q}
               </button>
             ))}
@@ -136,7 +136,7 @@ export function SpeakerChat() {
             key={i}
             className={`text-sm leading-relaxed ${
               msg.role === 'user'
-                ? 'text-white/90 bg-beaver-blue/20 border border-beaver-blue/15 rounded-2xl rounded-br-md px-4 py-3 ml-10'
+                ? 'text-white/90 bg-white/[0.08] border border-white/[0.08] rounded-2xl rounded-br-md px-4 py-3 ml-10'
                 : 'text-white/60 pr-6'
             }`}
           >
@@ -169,12 +169,12 @@ export function SpeakerChat() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Ask anything..."
-            className="flex-1 min-w-0 bg-white/[0.05] border border-white/[0.08] rounded-xl px-4 py-2.5 text-sm text-white/80 placeholder:text-white/25 outline-none focus:border-pugh-blue/30 focus:bg-white/[0.07] transition-all"
+            className="flex-1 min-w-0 bg-white/[0.08] border border-white/[0.1] rounded-xl px-4 py-2.5 text-sm text-white/90 placeholder:text-white/30 outline-none focus:border-white/[0.2] focus:bg-white/[0.12] transition-all"
           />
           <button
             type="submit"
             disabled={loading || !message.trim()}
-            className="w-10 h-10 flex items-center justify-center bg-beaver-blue/30 hover:bg-beaver-blue/50 border border-beaver-blue/20 hover:border-beaver-blue/40 rounded-xl text-white/50 hover:text-white/80 transition-all disabled:opacity-20 cursor-pointer"
+            className="w-10 h-10 flex items-center justify-center bg-white/[0.1] hover:bg-white/[0.2] border border-white/[0.1] hover:border-white/[0.2] rounded-xl text-white/50 hover:text-white/80 transition-all disabled:opacity-20 cursor-pointer"
           >
             <Send size={15} />
           </button>
