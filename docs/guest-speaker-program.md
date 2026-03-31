@@ -1,47 +1,47 @@
 # Guest Speaker Program
 
 > Applied AI Club at Penn State
-> v1 | Reviewed with `scripts/review.mjs`
+> v2 | Reviewed with `scripts/review.mjs`
 
 ---
 
 ## Who We Are and What We Do
 
-The Applied AI Club is a student organization at Penn State for students who want to understand how AI changes the way businesses operate. Most of us are in the Smeal College of Business. Some of us study other things. All of us are here because AI is already showing up in job descriptions, internship interviews, and the tools our professors are starting to talk about, and we want to be ready.
+The Applied AI Club is a student organization at Penn State dedicated to helping students understand how AI is changing the way businesses operate. Our membership is primarily based in the Smeal College of Business, though we welcome students from all colleges and majors. AI is already appearing in job descriptions, internship interviews, and classroom conversations, and our goal is to make sure students are prepared for that shift before they enter the workforce.
 
 We run three programs:
 
-**Events and Programming.** We host guest speakers and run working sessions where students use AI tools on real tasks. We bring in people who use AI in their work and ask them to share what it actually looks like. How they use it, what surprised them, what they wish they knew earlier. We also run tool walkthroughs where members get hands-on with ChatGPT, Claude, Cursor, Perplexity, and other tools that are becoming standard in business. This is where most of our members spend their time.
+**Events and Programming.** Our primary program brings guest speakers and working sessions to campus. We invite people who use AI in their professional lives to share what that experience actually looks like, and we run hands-on tool walkthroughs where members work directly with ChatGPT, Claude, Cursor, Perplexity, and other tools that are becoming standard across industries. This is where the majority of our members spend their time.
 
-**Labs.** A smaller group of members who build real applications. Labs is where members learn to scope AI projects, build working prototypes, test them, and ship. We use the same tools and workflows that professional teams use: AI-assisted development, modern web frameworks, automated testing, version control through GitHub. The club website was built in Labs. If you want to go beyond using AI tools and start building with them, this is the place.
+**Labs.** Our technical division, where a smaller group of members build real applications from start to finish. Labs members learn to scope AI projects, develop working prototypes, run automated tests, and ship finished products using the same tools and workflows found in professional engineering teams. The club website itself was built entirely within Labs.
 
-**Explore AI.** A public registry of AI tools organized by what you want to do with them: chat and brainstorm, research and synthesize, write code and build, or create media. 18 tools across 4 categories. Each one has a straightforward description of what it does and what you can use it for. Updated by club members.
+**Explore AI.** A public registry of 18 AI tools across four categories, organized by what you want to accomplish: research and synthesis, development and automation, creative production, or general AI assistance. Each listing provides a straightforward description of what the tool does, who makes it, and how students can use it. The registry is maintained and updated by club members.
 
-We are starting formal meetings Fall 2026 at Penn State University Park. Right now we have a growing mailing list, a GroupMe, and a board of four students building the foundation.
+We begin formal meetings in Fall 2026 at Penn State University Park. In the meantime, we have a growing mailing list, an active GroupMe, and a board of four students building the foundation for what comes next.
 
 ---
 
 ## What We Are Looking For
 
-We want to learn from people whose work has changed because of AI.
+We are looking to learn from professionals whose work has been shaped by AI in some meaningful way.
 
-We welcome speakers from any background and any field. Finance, marketing, consulting, healthcare, law, education, startups, government. The people we learn the most from are the ones who can explain what they do in a way that any student could follow, and who are willing to share what they have actually learned along the way.
+Technical expertise is valuable, and so is a perspective from someone whose role had little to do with technology until recently. We welcome speakers from any field, whether that is finance, marketing, consulting, healthcare, law, education, startups, or government. The common thread is a willingness to speak candidly about how AI has changed the way you work and what you have learned along the way.
 
-Technical expertise is great. So is a non-technical perspective on how AI showed up in a job that had nothing to do with tech a year ago. We are interested in the full range.
+What matters most to us is that you can communicate your experience in a way that a student with no background in your field could follow. We are looking for real insight over polished presentations.
 
 **What we ask:**
 
-- 30 to 45 minutes, including Q&A
-- Zoom or in person at Penn State University Park. We are flexible and happy to work it out.
-- A few sentences about what you would talk about so we can let members know what to expect
+- 30 to 45 minutes of your time, including Q&A
+- Zoom or in person at Penn State University Park, whichever works best for your schedule
+- A brief description of what you would like to discuss, so we can share it with our members ahead of time
 
 **What you get:**
 
-- A room of students who show up because they genuinely want to learn
-- A recorded session if you want it
-- A connection to a student community that is actively learning AI and will remember who helped them early
+- An engaged audience of students who are actively learning AI and show up because they want to be there
+- A recorded copy of your session, if you would like one for your own use
+- A lasting connection to a student community that will remember the people who invested in them early
 
-If you are interested, reach out at appliedaipsu@gmail.com or fill out the interest form on our website.
+If this sounds like something you would be interested in, we would love to hear from you at appliedaipsu@gmail.com or through the interest form on our website.
 
 ---
 
