@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Penn State brand tokens -- Applied AI Club */
 @theme {
   --color-*: initial;
