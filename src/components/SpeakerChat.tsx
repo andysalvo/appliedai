@@ -14,10 +14,12 @@ export function SpeakerChat() {
   const [messages, setMessages] = useState<{ role: string; content: string }[]>([])
   const [loading, setLoading] = useState(false)
   const [streamingText, setStreamingText] = useState('')
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+    }
   }, [messages, streamingText])
 
   const sendMessage = useCallback(
@@ -97,7 +99,7 @@ export function SpeakerChat() {
       </div>
 
       {/* Messages area */}
-      <div className="h-64 overflow-y-auto px-5 py-4 space-y-3">
+      <div ref={scrollRef} className="h-64 overflow-y-auto px-5 py-4 space-y-3">
         {/* Greeting */}
         {!hasMessages && !loading && (
           <p className="text-white/50 text-sm">
@@ -149,7 +151,7 @@ export function SpeakerChat() {
           </div>
         )}
 
-        <div ref={messagesEndRef} />
+        <div />
       </div>
 
       {/* Input */}
