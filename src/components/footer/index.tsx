@@ -26,10 +26,10 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <Link
-                href="/what-we-do"
+                href="/about"
                 className="block text-sm text-white/70 hover:text-white transition-colors"
               >
-                What We Do
+                About
               </Link>
               <Link
                 href="/labs"

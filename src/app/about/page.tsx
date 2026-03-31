@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar, FlaskConical, Compass, Users, Mic, Wrench } from 'lucide-react'
+import { assetPath } from '@/lib/assetPath'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { SlideIn } from '@/components/ui/SlideIn'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
+import { StaggerGrid, StaggerItem } from '@/components/ui/StaggerGrid'
 import { PressableButton } from '@/components/ui/PressableButton'
+import { team, teamSemester } from '@/data/team'
 
 export const metadata: Metadata = {
-  title: 'What We Do',
+  title: 'About',
   description:
     'The Applied AI Club runs events, builds projects through Labs, and maintains a registry of AI tools worth knowing.',
 }
@@ -214,6 +218,63 @@ export default function WhatWeDoPage() {
               </div>
             </SlideIn>
           </div>
+        </div>
+      </section>
+
+      {/* ─── TEAM ─── */}
+      <section className="py-14 md:py-20 bg-surface-alt">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-xs uppercase tracking-widest text-beaver-blue font-semibold mb-3 text-center">
+              Our Team
+            </p>
+            <h2
+              className="font-display text-navy font-bold leading-tight mb-4 text-center"
+              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)' }}
+            >
+              {teamSemester} executive board
+            </h2>
+            <p className="text-text-muted text-center max-w-lg mx-auto mb-10">
+              We are building something new and want more people involved.
+            </p>
+          </FadeIn>
+
+          <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member) => (
+              <StaggerItem key={member.name}>
+                <AnimatedCard className="bg-white rounded-2xl p-6 border border-border text-center">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-navy/[0.06] ring-2 ring-border ring-offset-2 ring-offset-white">
+                    {member.photo ? (
+                      <Image
+                        src={assetPath(member.photo)}
+                        alt={member.name}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span className="font-display text-navy text-xl font-semibold">
+                          {member.name
+                            .split(' ')
+                            .map((n) => n[0])
+                            .join('')}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <p className="font-display font-semibold text-navy text-sm">{member.name}</p>
+                  <p className="text-text-muted text-xs mt-1">{member.role}</p>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="text-xs text-link hover:text-link-hover mt-2 inline-block transition-colors"
+                  >
+                    {member.email}
+                  </a>
+                </AnimatedCard>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
         </div>
       </section>
 

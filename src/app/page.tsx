@@ -14,7 +14,7 @@ const sections = [
     title: 'Events and Programming',
     description:
       'Guest speakers, tool walkthroughs, and discussions about how AI is changing business and the workplace. Starting Fall 2026.',
-    href: '/what-we-do',
+    href: '/about',
     cta: 'Learn more',
   },
   {
