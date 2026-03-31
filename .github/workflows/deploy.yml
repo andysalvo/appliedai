@@ -61,9 +61,8 @@ jobs:
       - name: Build with Next.js
         run: npm run build
         env:
-          # Set basePath for GitHub Pages deployment
-          # This ensures images and assets work correctly at the subpath
-          NEXT_PUBLIC_BASE_PATH: /appliedai
+          # Custom domain (appliedaipennstate.com) serves at root, no basePath needed
+          NEXT_PUBLIC_BASE_PATH: ''
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v4
