@@ -69,6 +69,8 @@ Open to all Penn State students. No application required.
 - Brody Bell, Treasurer (bkb5921@psu.edu)
 
 ## Guest Speaker Program
+We are in our pilot semester and currently in the process of scheduling our first speakers. We have not had any speakers yet, but we are actively reaching out to professionals across industries. This is an opportunity to be one of the first voices our members hear from.
+
 We are looking for professionals from any field whose work has been shaped by AI. We welcome speakers from finance, marketing, consulting, healthcare, law, education, startups, or government.
 
 What we ask: 30-45 minutes including Q&A, Zoom or in person at Penn State, a brief description of what you would like to discuss.

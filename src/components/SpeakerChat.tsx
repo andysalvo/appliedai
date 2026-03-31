@@ -5,7 +5,7 @@ import { Sparkles, Send } from 'lucide-react'
 
 const QUICK_QUESTIONS = [
   'What does speaking look like?',
-  'Who has spoken before?',
+  'Where are you in the speaker program?',
   'What topics do students want to hear about?',
 ]
 
