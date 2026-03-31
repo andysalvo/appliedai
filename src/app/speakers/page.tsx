@@ -246,7 +246,7 @@ export default function SpeakersPage() {
             <FadeIn className="flex">
               <div
                 id="signup"
-                className="bg-white rounded-2xl border border-border p-8 md:p-10 scroll-mt-24 flex-1 flex flex-col"
+                className="bg-white rounded-2xl border border-border p-5 sm:p-8 md:p-10 scroll-mt-24 flex-1 flex flex-col"
               >
                 <h2 className="font-display text-lg font-bold text-navy mb-2 text-center">
                   Interested in speaking?

@@ -72,7 +72,7 @@ export function SpeakerForm() {
     'w-full px-4 py-3 rounded-xl border border-border bg-white text-text placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-beaver-blue/20 focus:border-beaver-blue/40 transition-all text-sm'
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
           type="text"
