@@ -83,8 +83,8 @@ export default function ExplorePage() {
               </h1>
               <p className="text-text-muted text-lg leading-relaxed mb-4">
                 AI is moving fast. These are the tools worth knowing right now, organized by what
-                you want to do with them. No hype. Just honest descriptions of what each tool does
-                and why it matters.
+                you want to do with them. Straightforward descriptions of what each tool does and
+                why it matters.
               </p>
               <p className="text-text-muted leading-relaxed">
                 Whether you are writing a paper, building an app, or just trying to understand what
@@ -234,7 +234,7 @@ export default function ExplorePage() {
               Want to learn these tools hands-on?
             </h2>
             <p className="text-text-muted mb-10 max-w-md mx-auto">
-              Labs members work with these tools on real projects. No lectures. Just building.
+              Labs members work with these tools on real projects. Hands-on, project-based learning.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <PressableButton

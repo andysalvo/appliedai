@@ -122,11 +122,11 @@ export const tools: Tool[] = [
   {
     name: 'Ollama',
     maker: 'Ollama',
-    description: 'Run AI models on your own computer. No cloud, no API keys, no cost.',
+    description: 'Run AI models on your own computer. Local, private, and free.',
     capabilities: [
       'Run LLMs locally (Llama, Mistral, Gemma)',
       'Complete privacy for sensitive work',
-      'No usage limits or costs',
+      'Unlimited usage at zero cost',
       'Fine-tune models on your data',
     ],
     url: 'https://ollama.com',

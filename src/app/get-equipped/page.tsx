@@ -237,7 +237,7 @@ export default function GetEquippedPage() {
                   on the class and the instructor. When in doubt, check your syllabus or ask.
                 </p>
                 <p className="text-text-muted text-sm leading-relaxed">
-                  Applied AI is about understanding these tools, not about shortcuts. We encourage
+                  Applied AI is about understanding these tools and using them well. We encourage
                   responsible, transparent use of AI in everything we do.
                 </p>
               </AnimatedCard>
