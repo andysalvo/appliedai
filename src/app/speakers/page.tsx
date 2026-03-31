@@ -13,6 +13,7 @@ import { FadeIn } from '@/components/ui/FadeIn'
 import { SlideIn } from '@/components/ui/SlideIn'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { SpeakerForm } from '@/components/SpeakerForm'
+import { SpeakerChat } from '@/components/SpeakerChat'
 
 export const metadata = {
   title: 'Speak at Applied AI',
@@ -224,23 +225,29 @@ export default function SpeakersPage() {
         </div>
       </section>
 
-      {/* ─── FORM ─── */}
+      {/* ─── FORM + CHAT ─── */}
       <section className="px-6 py-14 md:py-20 bg-surface-alt">
-        <div className="max-w-xl mx-auto">
-          <FadeIn>
-            <div className="bg-white rounded-2xl border border-border p-8 md:p-10">
-              <h2 className="font-display text-lg font-bold text-navy mb-2 text-center">
-                Interested in speaking?
-              </h2>
-              <p className="text-text-muted text-sm text-center mb-8">
-                Fill this out and we will follow up within a week.
-              </p>
-              <SpeakerForm />
-            </div>
-          </FadeIn>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <FadeIn>
+              <div className="bg-white rounded-2xl border border-border p-8 md:p-10">
+                <h2 className="font-display text-lg font-bold text-navy mb-2 text-center">
+                  Interested in speaking?
+                </h2>
+                <p className="text-text-muted text-sm text-center mb-8">
+                  Fill this out and we will follow up within a week.
+                </p>
+                <SpeakerForm />
+              </div>
+            </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <p className="text-center text-text-muted text-sm mt-8">
+            <FadeIn delay={0.15}>
+              <SpeakerChat />
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.2}>
+            <p className="text-center text-text-muted text-sm mt-10">
               Know someone who would be a great speaker? Please share this page.
               <br />
               <span className="text-beaver-blue font-medium">appliedaipennstate.com/speakers</span>
