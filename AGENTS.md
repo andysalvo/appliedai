@@ -2,19 +2,19 @@
 
 **Project:** Applied AI Club at Penn State -- the official website for the Applied AI Club, a student organization at Penn State.
 
-**Site:** https://andysalvo.github.io/appliedai/
+**Site:** https://appliedaipennstate.com
 
 **Repo:** https://github.com/andysalvo/appliedai
+
+**Hosting:** Vercel (auto-deploys from main). API routes enabled.
 
 **Local dev:** `cd ~/Documents/GitHub/appliedai && npm run dev`
 
 ---
 
-## Current State (2026-03-25)
+## Current State (2026-03-31)
 
-The site is a startup-style single-page scroll site with one standalone page (Explore AI), deployed to GitHub Pages. It connects to a Google Sheets mailing list via a Google Apps Script web app. The repo is agentic -- every architectural decision is documented so AI agents can maintain and extend it.
-
-**Branch protection:** Main branch requires 1 PR review. No direct pushes.
+8-page site deployed to Vercel with streaming AI chat on /speakers. Pages: home, about, labs, explore, get-equipped, speakers, team, api/chat. Google Sheets forms for mailing list and speaker interest. OpenAI-powered chat widget piloting on speakers page.
 
 ---
 
@@ -239,24 +239,41 @@ The "Source" column distinguishes website submissions (`"website"`) from other s
 - **General use:** "Applied AI"
 - **Never:** "Penn State Applied AI" (violates AD07 -- institution name cannot precede org name)
 
-### Colors
+### Brand Toolkit
 
-| Token                 | Hex       | Usage                           |
-| --------------------- | --------- | ------------------------------- |
-| `--color-navy`        | `#001E44` | Primary dark, headlines, footer |
-| `--color-beaver-blue` | `#1E407C` | Buttons, links, interactive     |
-| `--color-pugh-blue`   | `#96BEE6` | Accents, secondary backgrounds  |
-| `--color-pa-sky`      | `#009CDE` | Link hover, active indicators   |
+**Read `brand/BRAND_GUIDE.md` before any design work.** The full Penn State Design Toolkit (v3) is in `brand/`. Key rules:
 
-### Fonts
+**Colors (Canvas + Focus + Accent formula):**
+
+| Token                 | Hex       | Role                                                               |
+| --------------------- | --------- | ------------------------------------------------------------------ |
+| `--color-navy`        | `#001E44` | Primary. Nittany Navy. Headings, dark canvas, headers.             |
+| `--color-beaver-blue` | `#1E407C` | Primary. Buttons, links, accents. Never use at less than 100%.     |
+| `--color-white`       | `#FFFFFF` | White Out. Light canvas, text on dark.                             |
+| `--color-pugh-blue`   | `#96BEE6` | Secondary. Soft backgrounds, labels. Can serve as canvas or focus. |
+| `--color-pa-sky`      | `#009CDE` | Accent. Highlights, tech feel. Use sparingly.                      |
+
+- **Never create solid tints** of Nittany Navy or Beaver Blue (no 70%, 50% etc). Opacity overlays on photos/video only.
+- Light canvas (white/pugh blue) → Focus in Nittany Navy or Beaver Blue
+- Dark canvas (navy/beaver blue) → Focus in White Out or Pugh Blue
+- Accent colors used sparingly for highlights and CTAs
+
+**Fonts:**
 
 - **Body:** Inter (via next/font)
 - **Display:** Roboto Slab (via next/font)
+
+### Key Documents
+
+- `docs/guest-speaker-program.md` - Canonical speaker program text (source of truth for content)
+- `docs/Applied-AI-Guest-Speaker-Program.pdf` - Formal one-pager PDF (v1), brand-compliant, ready to send to faculty and professionals
+- `content/VOICE_BRIEF.md` - Writing style rules for all public-facing copy
 
 ### Cannot Use
 
 - Penn State Lion Shield, athletics logos, Block S, mascot, seal, building images
 - Can use: Paw print (unaltered), University-Recognized Student Organization Shield Mark (if requested)
+- Our name is "Applied AI Club **at Penn State**" (never "Penn State Applied AI Club")
 
 ### Footer Disclaimer (required)
 
