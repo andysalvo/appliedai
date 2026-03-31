@@ -41,11 +41,25 @@ export default function SpeakersPage() {
             >
               Share what AI looks like in your work
             </h1>
-            <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
+            <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto mb-8">
               We are a student organization at Penn State dedicated to helping students understand
               how AI is changing the way businesses operate. We are looking for professionals who
               can share what that looks like in practice.
             </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="#speak"
+                className="inline-flex items-center gap-2 bg-white text-navy px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors"
+              >
+                Sign up to speak
+              </a>
+              <a
+                href="#speak"
+                className="inline-flex items-center gap-2 border border-white/15 text-white/80 px-7 py-3.5 rounded-xl font-medium text-sm hover:bg-white/[0.06] transition-colors"
+              >
+                Ask questions
+              </a>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -226,7 +240,7 @@ export default function SpeakersPage() {
       </section>
 
       {/* ─── FORM + CHAT ─── */}
-      <section className="px-6 py-14 md:py-20 bg-surface-alt">
+      <section id="speak" className="px-6 py-14 md:py-20 bg-surface-alt scroll-mt-20">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <FadeIn>
