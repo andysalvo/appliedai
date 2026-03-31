@@ -53,9 +53,9 @@ export default function LabsPage() {
               className="font-display font-bold leading-tight mb-6"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
             >
-              Where students build with AI,
+              Where students build with AI
               <br />
-              not just learn about it
+              and ship real projects
             </h1>
             <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
               Labs is the research and development arm of Applied AI. We run experiments, build
@@ -99,8 +99,8 @@ export default function LabsPage() {
                 the field. You pick a project, form a team, and build it.
               </p>
               <p className="text-text-muted leading-relaxed">
-                No prior experience required. If you are curious and want to learn by doing, Labs is
-                the place.
+                All experience levels welcome. If you are curious and want to learn by doing, Labs
+                is the place.
               </p>
             </SlideIn>
 
@@ -159,8 +159,7 @@ export default function LabsPage() {
                 What you will work with
               </h2>
               <p className="text-text-muted max-w-lg mx-auto">
-                The same tools and techniques used in production AI systems. Hands-on, not
-                theoretical.
+                The same tools and techniques used in production AI systems. Hands-on from day one.
               </p>
             </div>
           </FadeIn>
@@ -294,8 +293,8 @@ export default function LabsPage() {
               Build something real
             </h2>
             <p className="text-white/60 text-lg max-w-md mx-auto mb-12">
-              Labs is where you go from learning about AI to building with it. No gatekeeping. Just
-              projects.
+              Labs is where you go from learning about AI to building with it. Everyone is welcome.
+              Just bring curiosity.
             </p>
           </FadeIn>
 

@@ -106,7 +106,7 @@ export default function TeamPage() {
                 How to join Applied AI
               </h2>
               <p className="text-white/60 max-w-lg mx-auto">
-                No application. No prerequisites. Just follow these steps.
+                Open to all Penn State students. Three steps to get started.
               </p>
             </div>
           </FadeIn>

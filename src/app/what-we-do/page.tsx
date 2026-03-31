@@ -180,8 +180,8 @@ export default function WhatWeDoPage() {
                 level. From beginner-friendly assistants to the agentic tools shaping the industry.
               </p>
               <p className="text-text-muted leading-relaxed mb-8">
-                Each tool includes what it does, who makes it, and what you can do with it. No hype.
-                Just honest descriptions.
+                Each tool includes what it does, who makes it, and what you can do with it.
+                Straightforward descriptions written by club members.
               </p>
               <PressableButton
                 href="/explore"
@@ -220,7 +220,7 @@ export default function WhatWeDoPage() {
             </h2>
             <p className="text-text-muted mb-10 max-w-md mx-auto">
               Join the GroupMe or sign up for the mailing list. Regular meetings begin Fall 2026 at
-              Penn State. No application. No prerequisites.
+              Penn State. Open to all students.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <PressableButton
