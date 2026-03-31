@@ -177,11 +177,13 @@ Brand tokens are locked in `globals.css` via Tailwind v4 `@theme` with `--color-
 ### Always Do
 
 - Run `npm run build` before committing to verify static export works
+- Run `node scripts/review.mjs <file>` on any document in `docs/` before committing. Read the review output. If the student lens scores below 7 or the voice lens flags AI-detected sentences, revise before shipping. Do not claim a document was reviewed if the script has not actually been run.
 - Use brand tokens from `globals.css` (never hardcode colors)
 - Screenshot pages after visual changes to verify
 - Write accessible HTML (semantic elements, alt text, ARIA labels, keyboard navigation)
 - Use `<Link>` from `next/link` for all internal navigation
 - Keep commits atomic -- one logical change per commit
+- Follow VOICE_BRIEF.md for all public-facing copy (rule 8: say what we are, define by presence)
 
 ### Ask First
 
