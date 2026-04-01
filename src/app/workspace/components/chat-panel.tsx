@@ -48,7 +48,10 @@ export function ChatPanel({
   onSend,
 }: ChatPanelProps) {
   const [input, setInput] = useState('')
+  const [isDragOver, setIsDragOver] = useState(false)
+  const [dropSuccess, setDropSuccess] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const shouldReduceMotion = useReducedMotion()
 
   const scrollToBottom = () => {
@@ -70,6 +73,32 @@ export function ChatPanel({
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
       handleSend()
+    }
+  }
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'copy'
+    setIsDragOver(true)
+  }
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    // Only set false if we actually left the container
+    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+      setIsDragOver(false)
+    }
+  }
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault()
+    setIsDragOver(false)
+    const artifactText = e.dataTransfer.getData('text/plain')
+    if (artifactText) {
+      setInput((prev) => artifactText + prev)
+      inputRef.current?.focus()
+      // Flash green border on success
+      setDropSuccess(true)
+      setTimeout(() => setDropSuccess(false), 500)
     }
   }
 
@@ -184,9 +213,24 @@ export function ChatPanel({
         </div>
 
         {/* Input bar */}
-        <div id="inputBar" className="px-6 py-4 border-t border-border">
-          <div className="flex items-center gap-2 bg-surface border border-border rounded-xl px-4 py-1 focus-within:border-beaver-blue transition-colors">
+        <div
+          id="inputBar"
+          className="px-6 py-4 border-t border-border"
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
+          <div
+            className={`flex items-center gap-2 bg-surface border rounded-xl px-4 py-1 transition-colors duration-300 ${
+              dropSuccess
+                ? 'border-green-500'
+                : isDragOver
+                  ? 'border-pa-sky'
+                  : 'border-border focus-within:border-beaver-blue'
+            }`}
+          >
             <input
+              ref={inputRef}
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -202,27 +246,33 @@ export function ChatPanel({
               <Send className="w-4 h-4" />
             </button>
           </div>
-          <p className="text-[11px] text-text-muted mt-1.5 pl-1">
-            Press Enter to send. The agent can add you to the{' '}
-            <span className="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">
-              agent list
-              <span className="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">
-                The directory of everyone who contributes to the club site. Your profile, role, and
-                contributions are tracked here.
-                <span className="absolute top-full left-1/2 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-navy" />
+          {isDragOver ? (
+            <p className="text-[11px] text-pa-sky font-medium mt-1.5 pl-1 motion-safe:animate-pulse">
+              Drop to attach context
+            </p>
+          ) : (
+            <p className="text-[11px] text-text-muted mt-1.5 pl-1">
+              Press Enter to send. The agent can add you to the{' '}
+              <span className="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">
+                agent list
+                <span className="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">
+                  The directory of everyone who contributes to the club site. Your profile, role,
+                  and contributions are tracked here.
+                  <span className="absolute top-full left-1/2 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-navy" />
+                </span>
               </span>
-            </span>
-            , manage{' '}
-            <span className="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">
-              tools
-              <span className="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">
-                The AI tools shown on the Explore page. Each tool has a name, company, description,
-                and category.
-                <span className="absolute top-full left-1/2 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-navy" />
+              , manage{' '}
+              <span className="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">
+                tools
+                <span className="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">
+                  The AI tools shown on the Explore page. Each tool has a name, company,
+                  description, and category.
+                  <span className="absolute top-full left-1/2 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-navy" />
+                </span>
               </span>
-            </span>
-            , and answer questions.
-          </p>
+              , and answer questions.
+            </p>
+          )}
         </div>
       </div>
     </LazyMotion>
