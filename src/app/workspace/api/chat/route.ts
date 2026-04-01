@@ -66,18 +66,19 @@ export async function POST(req: NextRequest) {
             choice.message,
           ]
 
-          for (const tc of toolCalls) {
-            const args = JSON.parse(tc.function.arguments)
-            send({ type: 'tool_call', toolName: tc.function.name })
+          for (const tc of toolCalls.filter((t) => t.type === 'function')) {
+            const fn = (tc as Extract<typeof tc, { type: 'function' }>).function
+            const args = JSON.parse(fn.arguments)
+            send({ type: 'tool_call', toolName: fn.name })
 
             let result: string
             try {
-              result = executeTool(tc.function.name, args)
+              result = executeTool(fn.name, args)
             } catch (e) {
               result = `Error: ${e instanceof Error ? e.message : 'Unknown error'}`
             }
 
-            send({ type: 'tool_result', toolName: tc.function.name, toolResult: result })
+            send({ type: 'tool_result', toolName: fn.name, toolResult: result })
 
             toolMessages.push({
               role: 'tool',
