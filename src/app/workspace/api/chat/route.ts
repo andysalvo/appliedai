@@ -112,7 +112,8 @@ export async function POST(req: NextRequest) {
               {
                 role: 'system',
                 content:
-                  'Repeat the following message exactly, word for word: ' + choice.message.content,
+                  'Repeat the following message exactly, word for word. Do NOT add anything. Do NOT mention training data, cutoff dates, or model information. Output ONLY the message below:\n\n' +
+                  choice.message.content,
               },
               { role: 'user', content: 'Go.' },
             ],
