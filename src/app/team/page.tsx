@@ -7,7 +7,7 @@ import { StaggerGrid, StaggerItem } from '@/components/ui/StaggerGrid'
 import { SlideIn } from '@/components/ui/SlideIn'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { PressableButton } from '@/components/ui/PressableButton'
-import { team, teamSemester } from '@/data/team'
+import { agents as team, agentsSemester as teamSemester } from '@/data/agents'
 
 export const metadata: Metadata = {
   title: 'Team',

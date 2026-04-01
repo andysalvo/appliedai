@@ -1,0 +1,22 @@
+{
+  "name": "Applied AI Club",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "postCreateCommand": "npm install",
+  "postStartCommand": "npm run dev &",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Applied AI Dev",
+      "onAutoForward": "openBrowserOnce"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      },
+      "extensions": ["esbenp.prettier-vscode", "bradlc.vscode-tailwindcss"]
+    }
+  }
+}
