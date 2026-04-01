@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import { assetPath } from '@/lib/assetPath'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -9,10 +11,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="font-display text-2xl font-bold hover:text-white">
-              Applied AI
+            <Link href="/" className="inline-block">
+              <Image
+                src={assetPath('/images/logo.png')}
+                alt="Applied AI"
+                width={822}
+                height={205}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
-            <p className="text-pugh-blue/80 mt-1 text-sm">at Penn State</p>
+            <p className="text-pugh-blue/80 mt-2 text-sm">at Penn State</p>
             <p className="text-white/50 mt-4 text-sm leading-relaxed max-w-xs">
               Building a community where students learn how AI is used in the real world and explore
               its impact together.
