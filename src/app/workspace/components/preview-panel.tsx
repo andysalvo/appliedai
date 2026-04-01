@@ -138,7 +138,7 @@ function CompareView() {
           Your Changes
         </div>
         <iframe
-          src="http://localhost:3000"
+          src="http://localhost:3000/team/"
           title="Your changes"
           className="flex-1 w-full border-none"
         />
@@ -174,7 +174,7 @@ export function PreviewPanel() {
         {activeTab === 'preview' && (
           <iframe
             id="previewIframe"
-            src="http://localhost:3000"
+            src="https://appliedaipennstate.com"
             title="Live site preview"
             className="w-full h-full border border-border rounded-lg bg-white"
           />

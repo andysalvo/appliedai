@@ -60,7 +60,7 @@ export default function WorkspacePage() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="h-screen flex flex-col">
+      <div className="fixed inset-0 z-50 bg-white h-screen flex flex-col">
         <SessionBar hasChanges={chat.hasChanges} onDone={handleDone} />
         <div className="flex flex-1 min-h-0">
           <ChatPanel
