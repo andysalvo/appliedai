@@ -255,25 +255,8 @@ export function ChatPanel({
             </p>
           ) : (
             <p className="text-[11px] text-text-muted mt-1.5 pl-1">
-              Press Enter to send. The agent can add you to the{' '}
-              <span className="group/agent relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">
-                agent list
-                <span className="hidden group-hover/agent:block absolute bottom-full left-0 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-56 z-[200] shadow-lg pointer-events-none">
-                  The directory of everyone who contributes to the club site. Your profile, role,
-                  and contributions are tracked here.
-                  <span className="absolute top-full left-4 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-navy" />
-                </span>
-              </span>
-              , manage{' '}
-              <span className="group/tools relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">
-                tools
-                <span className="hidden group-hover/tools:block absolute bottom-full left-0 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-56 z-[200] shadow-lg pointer-events-none">
-                  The AI tools shown on the Explore page. Each tool has a name, company,
-                  description, and category.
-                  <span className="absolute top-full left-4 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-navy" />
-                </span>
-              </span>
-              , and answer questions.
+              Press Enter to send. The agent can add you to the agent list, manage tools, and answer
+              questions.
             </p>
           )}
         </div>
