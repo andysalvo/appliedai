@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Calendar, FlaskConical, Compass, Mic, Mail } from 'lucide-react'
+import { ArrowRight, Calendar, FlaskConical, Mic, Mail } from 'lucide-react'
 import { assetPath } from '@/lib/assetPath'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { RevealText } from '@/components/ui/RevealText'
@@ -26,14 +26,6 @@ const sections = [
       'For members who want to go deeper. Labs takes on full application builds using industry-standard development workflows.',
     href: '/labs',
     cta: 'Explore Labs',
-  },
-  {
-    icon: Compass,
-    title: 'Explore AI',
-    description:
-      'A registry of AI tools worth knowing, organized for students at every level. Straightforward descriptions of what each tool does and why it matters.',
-    href: '/explore',
-    cta: 'Browse tools',
   },
 ]
 
@@ -136,7 +128,7 @@ export default function Home() {
             </h2>
           </ParallaxText>
 
-          <StaggerGrid className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {sections.map((section) => {
               const Icon = section.icon
               return (
