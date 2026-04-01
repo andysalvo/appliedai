@@ -97,34 +97,13 @@ export function ChatPanel({
                 <span className="text-navy font-extrabold text-xl">AI</span>
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-navy mb-2">Welcome to Applied AI</h2>
+                <h2 className="text-lg font-semibold text-navy mb-2">
+                  Welcome to the Applied AI Workspace
+                </h2>
                 <p className="text-text-muted text-sm max-w-sm">
-                  Tell the agent what you want to do. It handles the code for you.
+                  The agent will get you set up with a few quick questions, then you can start
+                  contributing.
                 </p>
-              </div>
-              <div className="flex flex-col gap-2 w-full max-w-sm">
-                {quickActions.map((action) => (
-                  <button
-                    key={action.label}
-                    onClick={() => onSend(action.label)}
-                    className={`flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-left text-sm transition-colors ${
-                      action.primary
-                        ? 'bg-navy text-white border border-navy hover:bg-beaver-blue hover:border-beaver-blue'
-                        : 'bg-white border border-border text-text hover:border-beaver-blue hover:bg-surface-alt'
-                    }`}
-                  >
-                    <span
-                      className={`w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0 ${
-                        action.primary ? 'bg-white/20' : action.color
-                      }`}
-                    >
-                      <action.icon
-                        className={`w-3.5 h-3.5 ${action.primary ? 'text-white' : ''}`}
-                      />
-                    </span>
-                    {action.label}
-                  </button>
-                ))}
               </div>
             </m.div>
           )}
