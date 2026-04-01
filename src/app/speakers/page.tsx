@@ -1,17 +1,6 @@
-import {
-  Mic,
-  Clock,
-  Video,
-  Users,
-  Calendar,
-  FlaskConical,
-  Compass,
-  CheckCircle2,
-  Gift,
-} from 'lucide-react'
+import { Mic, Clock, Video, Users, CheckCircle2, Gift } from 'lucide-react'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { SlideIn } from '@/components/ui/SlideIn'
-import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { SpeakerForm } from '@/components/SpeakerForm'
 import { SpeakerChat } from '@/components/SpeakerChat'
 
@@ -72,7 +61,7 @@ export default function SpeakersPage() {
               {[
                 { icon: Clock, label: '30-45 minutes', detail: 'Including Q&A' },
                 { icon: Video, label: 'Zoom or in person', detail: 'Your preference' },
-                { icon: Users, label: 'All fields welcome', detail: 'Finance to nonprofits' },
+                { icon: Users, label: 'All fields welcome', detail: 'Any industry, any role' },
                 { icon: Mic, label: 'Your experience', detail: 'Real insight over slides' },
               ].map((item) => (
                 <div
@@ -101,50 +90,25 @@ export default function SpeakersPage() {
             <p className="text-text-muted leading-relaxed mb-6">
               The Applied AI Club is a student organization at Penn State dedicated to helping
               students understand how AI is changing the way businesses operate. Our membership is
-              primarily based in the Smeal College of Business, though we welcome students from all
-              colleges and majors. AI is already appearing in job descriptions, internship
-              interviews, and classroom conversations, and our goal is to make sure students are
-              prepared for that shift before they enter the workforce.
+              primarily based in the Smeal College of Business, with students across accounting,
+              finance, marketing, supply chain, MIS, risk management, and management. We welcome
+              students from all colleges and majors.
+            </p>
+            <p className="text-text-muted leading-relaxed mb-6">
+              Most of our members are still early in their exposure to how AI and technology are
+              used in professional settings. Guest speakers help bridge the gap between what
+              students learn in the classroom and what professionals work with every day.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="space-y-4 mb-6">
-              {[
-                {
-                  icon: Calendar,
-                  title: 'Events and Programming',
-                  desc: 'Our primary program brings guest speakers and working sessions to campus. We invite people who use AI in their professional lives to share what that experience actually looks like, and we run hands-on tool walkthroughs where members work directly with ChatGPT, Claude, Cursor, Perplexity, and other tools that are becoming standard across industries.',
-                },
-                {
-                  icon: FlaskConical,
-                  title: 'Labs',
-                  desc: 'Our technical division, where a smaller group of members build real applications from start to finish. Labs members learn to scope AI projects, develop working prototypes, run automated tests, and ship finished products using the same tools and workflows found in professional engineering teams.',
-                },
-                {
-                  icon: Compass,
-                  title: 'Explore AI',
-                  desc: 'A public registry of 18 AI tools across four categories, organized by what you want to accomplish. Each listing provides a straightforward description of what the tool does, who makes it, and how students can use it.',
-                },
-              ].map((item) => {
-                const Icon = item.icon
-                return (
-                  <AnimatedCard
-                    key={item.title}
-                    className="bg-white rounded-xl p-5 border border-border flex gap-4"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-navy/[0.06] flex items-center justify-center shrink-0">
-                      <Icon size={18} className="text-navy" />
-                    </div>
-                    <div>
-                      <p className="font-display text-navy font-semibold text-sm mb-1">
-                        {item.title}
-                      </p>
-                      <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </AnimatedCard>
-                )
-              })}
+            <div className="bg-white rounded-xl p-5 border border-border mb-6">
+              <p className="text-text-muted text-sm leading-relaxed">
+                We run guest speaker sessions, hands-on workshops, and case competitions where
+                members work through real business problems using AI. For members who want to go
+                deeper, our Labs program takes on full application builds using industry-standard
+                development workflows.
+              </p>
             </div>
           </FadeIn>
 
@@ -167,20 +131,13 @@ export default function SpeakersPage() {
                 Who we are looking for
               </h2>
               <p className="text-text-muted leading-relaxed mb-4">
-                We are looking to learn from professionals whose work has been shaped by AI in some
-                meaningful way. Technical expertise is valuable, and so is a perspective from
-                someone whose role had little to do with technology until recently.
-              </p>
-              <p className="text-text-muted leading-relaxed mb-4">
-                We welcome speakers from any field, whether that is finance, marketing, consulting,
-                healthcare, law, education, startups, or government. The common thread is a
-                willingness to speak candidly about how AI has changed the way you work and what you
-                have learned along the way.
+                Professionals whose work has been shaped by AI in some meaningful way. Technical
+                expertise is valuable, and so is a perspective from someone whose role had little to
+                do with technology until recently.
               </p>
               <p className="text-text-muted leading-relaxed">
-                What matters most to us is that you can communicate your experience in a way that a
-                student with no background in your field could follow. We are looking for real
-                insight over polished presentations.
+                What matters most is that you can communicate your experience in a way that a
+                student with no background in your field could follow.
               </p>
             </SlideIn>
 

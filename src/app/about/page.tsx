@@ -8,12 +8,13 @@ import { SlideIn } from '@/components/ui/SlideIn'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { StaggerGrid, StaggerItem } from '@/components/ui/StaggerGrid'
 import { PressableButton } from '@/components/ui/PressableButton'
+import { ParallaxText } from '@/components/ui/ParallaxText'
 import { team, teamSemester } from '@/data/team'
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'The Applied AI Club runs events, builds projects through Labs, and maintains a registry of AI tools worth knowing.',
+    'The Applied AI Club at Penn State runs guest speaker sessions, hands-on workshops, case competitions, and a Labs program for members who want to go deeper.',
 }
 
 export default function WhatWeDoPage() {
@@ -34,12 +35,14 @@ export default function WhatWeDoPage() {
               className="font-display text-white font-bold leading-tight mb-6"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}
             >
-              Three pillars, one goal
+              What we do
             </h1>
             <p className="text-white/50 text-lg max-w-2xl leading-relaxed">
-              Everything we do is built around helping Penn State students understand and work with
-              AI. We run events, build real projects, and maintain tools that make it easier to get
-              started.
+              Most of our members are still early in their exposure to how AI shows up in
+              professional settings. We run guest speaker sessions, hands-on workshops, and case
+              competitions where members work through real business problems using AI. For members
+              who want to go deeper, our Labs program takes on full application builds using
+              industry-standard development workflows.
             </p>
           </FadeIn>
         </div>
@@ -57,16 +60,17 @@ export default function WhatWeDoPage() {
                 className="font-display text-navy font-bold leading-tight mb-6"
                 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)' }}
               >
-                Events and Programming
+                Guest Speakers, Workshops, and Competitions
               </h2>
               <p className="text-text-muted leading-relaxed mb-4">
-                We will host guest speakers, run tool walkthroughs, and discuss how AI is changing
-                business and the workplace. Meetings will be open to all Penn State students
-                regardless of major or experience.
+                We bring in professionals from all fields to share how AI has changed the way they
+                work. We also run hands-on workshops and case competitions where members work
+                through real business problems using AI. Open to all Penn State students regardless
+                of major or experience.
               </p>
               <p className="text-text-muted leading-relaxed">
-                Events and regular meetings begin Fall 2026 at Penn State. Join the mailing list or
-                GroupMe to get notified when we launch.
+                Guest speakers help bridge the gap between what students learn in the classroom and
+                what professionals work with every day. Regular meetings begin Fall 2026.
               </p>
             </SlideIn>
 
@@ -76,17 +80,17 @@ export default function WhatWeDoPage() {
                   {
                     icon: Mic,
                     title: 'Guest speakers',
-                    desc: 'Industry professionals and faculty share how AI is used in their work.',
+                    desc: 'Professionals from all fields share how AI has changed the way they work.',
                   },
                   {
                     icon: Wrench,
-                    title: 'Tool walkthroughs',
-                    desc: 'Hands-on sessions with ChatGPT, Claude, Cursor, and other AI tools.',
+                    title: 'Hands-on workshops',
+                    desc: 'Work directly with AI tools on real tasks. Learn by doing, not just watching.',
                   },
                   {
                     icon: Users,
-                    title: 'Open discussions',
-                    desc: 'What is happening with AI, how it affects careers, and where it is going.',
+                    title: 'Case competitions',
+                    desc: 'Teams work through real business problems using AI and present their solutions.',
                   },
                 ].map((item) => {
                   const Icon = item.icon
@@ -131,13 +135,13 @@ export default function WhatWeDoPage() {
                 Applied AI Labs
               </h2>
               <p className="text-white/50 leading-relaxed mb-4">
-                Labs is the research and development arm of the club. We run experiments, build
-                tools, and give members who want to go deeper a place to work on real projects with
-                real AI systems.
+                For members who want to go deeper, Labs takes on full application builds using
+                industry-standard development workflows. You pick a project, form a team, and ship
+                it.
               </p>
               <p className="text-white/50 leading-relaxed mb-8">
                 Our first project is the Student AI Hub. The roadmap includes more hands-on work
-                with the same stack serious teams use.
+                with the same tools and workflows used in professional engineering teams.
               </p>
               <Link
                 href="/labs"
@@ -153,18 +157,77 @@ export default function WhatWeDoPage() {
                 <p className="text-white/60 font-display font-semibold text-sm mb-4">The stack</p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    'Claude Code',
-                    'Next.js',
-                    'Tailwind CSS',
-                    'GitHub Actions',
-                    'Google Workspace',
-                    'Playwright',
+                    {
+                      name: 'Claude Code',
+                      icon: (
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                        >
+                          <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                          <path d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      name: 'Next.js',
+                      icon: (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                          <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 01-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 00-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 00-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 01-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 01-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 01.174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 004.735 7.17l1.9 2.878.096-.063a12.317 12.317 0 002.466-2.163 11.944 11.944 0 002.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.86-8.292-8.208-9.695a12.597 12.597 0 00-2.499-.523A33.119 33.119 0 0011.572 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 01.237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 01.233-.296c.096-.05.13-.054.5-.054z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      name: 'Tailwind CSS',
+                      icon: (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                          <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      name: 'GitHub Actions',
+                      icon: (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      name: 'Google Workspace',
+                      icon: (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
+                          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      name: 'Playwright',
+                      icon: (
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                        >
+                          <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                        </svg>
+                      ),
+                    },
                   ].map((tool) => (
                     <div
-                      key={tool}
-                      className="bg-white/[0.04] border border-white/[0.06] rounded-xl p-3 text-center"
+                      key={tool.name}
+                      className="bg-white/[0.04] border border-white/[0.06] rounded-xl p-4 flex items-center gap-3"
                     >
-                      <p className="text-white/70 text-sm font-medium">{tool}</p>
+                      <div className="text-pugh-blue shrink-0">{tool.icon}</div>
+                      <p className="text-white/70 text-sm font-medium">{tool.name}</p>
                     </div>
                   ))}
                 </div>
@@ -189,8 +252,8 @@ export default function WhatWeDoPage() {
                 Explore AI
               </h2>
               <p className="text-text-muted leading-relaxed mb-4">
-                We maintain a registry of AI tools worth knowing, organized for students at every
-                level. From beginner-friendly assistants to the agentic tools shaping the industry.
+                We also maintain a registry of AI tools worth knowing, organized for students at
+                every level. It is a good starting point if you are not sure what is out there.
               </p>
               <p className="text-text-muted leading-relaxed mb-8">
                 Each tool includes what it does, who makes it, and what you can do with it.
@@ -207,12 +270,19 @@ export default function WhatWeDoPage() {
 
             <SlideIn direction="right">
               <div className="grid grid-cols-2 gap-3">
-                {['ChatGPT', 'Claude', 'Perplexity', 'Cursor', 'Ollama', 'Codex'].map((tool) => (
+                {[
+                  'AI Assistants',
+                  'Research Tools',
+                  'Developer Tools',
+                  'Creative Tools',
+                  'Local Models',
+                  'Code Editors',
+                ].map((cat) => (
                   <div
-                    key={tool}
+                    key={cat}
                     className="bg-white rounded-xl p-4 border border-border text-center"
                   >
-                    <p className="font-display text-navy text-sm font-semibold">{tool}</p>
+                    <p className="font-display text-navy text-sm font-semibold">{cat}</p>
                   </div>
                 ))}
               </div>

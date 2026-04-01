@@ -30,9 +30,9 @@ export function Header() {
           <Image
             src={assetPath('/images/logo.png')}
             alt="Applied AI"
-            width={840}
-            height={241}
-            className={`h-7 w-auto transition-all duration-300 ${
+            width={822}
+            height={205}
+            className={`h-10 w-auto transition-all duration-300 ${
               scrolled ? '' : 'brightness-0 invert'
             }`}
             priority

@@ -60,9 +60,9 @@ export default function LabsPage() {
               and ship real projects
             </h1>
             <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
-              Labs is the research and development arm of Applied AI. We run experiments, build
-              tools, and give members who want to go deeper a place to work on real projects with
-              real AI systems.
+              For members who want to go deeper, Labs takes on full application builds using
+              industry-standard development workflows. You pick a project, form a team, and ship
+              something real.
             </p>
           </FadeIn>
 

@@ -3,17 +3,19 @@ import Link from 'next/link'
 import { ArrowRight, Calendar, FlaskConical, Compass, Mic, Mail } from 'lucide-react'
 import { assetPath } from '@/lib/assetPath'
 import { FadeIn } from '@/components/ui/FadeIn'
+import { RevealText } from '@/components/ui/RevealText'
 import { StaggerGrid, StaggerItem } from '@/components/ui/StaggerGrid'
 import { PressableButton } from '@/components/ui/PressableButton'
+import { ParallaxText } from '@/components/ui/ParallaxText'
 import { MailingListForm } from '@/components/MailingListForm'
 import { MailingListFormLight } from '@/components/MailingListFormLight'
 
 const sections = [
   {
     icon: Calendar,
-    title: 'Events and Programming',
+    title: 'Guest Speakers and Workshops',
     description:
-      'Guest speakers, tool walkthroughs, and discussions about how AI is changing business and the workplace. Starting Fall 2026.',
+      'We bring in professionals to share how AI shows up in their work, and we run hands-on workshops and case competitions where members work through real problems.',
     href: '/about',
     cta: 'Learn more',
   },
@@ -21,7 +23,7 @@ const sections = [
     icon: FlaskConical,
     title: 'Applied AI Labs',
     description:
-      'The R&D arm of the club. Build real projects with Claude Code, Next.js, GitHub Actions, and the same tools real teams ship with.',
+      'For members who want to go deeper. Labs takes on full application builds using industry-standard development workflows.',
     href: '/labs',
     cta: 'Explore Labs',
   },
@@ -29,7 +31,7 @@ const sections = [
     icon: Compass,
     title: 'Explore AI',
     description:
-      'A registry of AI tools worth knowing, organized for students at every level. From beginner-friendly assistants to agentic tools shaping the industry.',
+      'A registry of AI tools worth knowing, organized for students at every level. Straightforward descriptions of what each tool does and why it matters.',
     href: '/explore',
     cta: 'Browse tools',
   },
@@ -39,30 +41,34 @@ export default function Home() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative overflow-hidden bg-navy min-h-[80vh] flex items-center">
+      <section className="relative overflow-hidden bg-navy min-h-[60vh] flex items-center">
         {/* Gradient accent glow matching logo bar */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-beaver-blue via-pa-sky to-pugh-blue" />
         <div className="absolute bottom-0 left-[10%] right-[10%] h-[120px] bg-gradient-to-r from-beaver-blue/20 via-pa-sky/15 to-pugh-blue/10 blur-[80px]" />
         <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-beaver-blue/10 blur-[150px]" />
 
-        <div className="relative max-w-5xl mx-auto px-6 py-32 w-full text-center">
+        <div className="relative max-w-5xl mx-auto px-6 py-20 md:py-24 w-full text-center">
           <FadeIn>
             <Image
               src={assetPath('/images/logo.png')}
               alt="Applied AI"
-              width={840}
-              height={241}
-              className="w-[min(80vw,440px)] h-auto mx-auto brightness-0 invert"
+              width={822}
+              height={205}
+              className="w-[min(80vw,420px)] h-auto mx-auto brightness-0 invert"
               priority
             />
           </FadeIn>
           <FadeIn delay={0.25}>
-            <p className="mt-8 text-white/50 text-lg md:text-xl leading-relaxed max-w-lg mx-auto">
-              Where Penn State students learn to think with AI.
+            <p className="mt-5 text-white/50 text-lg md:text-xl leading-relaxed max-w-lg mx-auto">
+              <RevealText
+                text="Where Penn State students learn to think with AI."
+                className="text-white/50"
+                delay={0.3}
+              />
             </p>
           </FadeIn>
-          <FadeIn delay={0.45}>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <FadeIn delay={0.6}>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
               <PressableButton
                 href="/team"
                 className="inline-flex items-center gap-2 bg-white text-navy px-8 py-4 rounded-xl font-semibold text-sm"
@@ -88,16 +94,21 @@ export default function Home() {
             <p className="text-xs uppercase tracking-widest text-beaver-blue font-semibold mb-6">
               Our Mission
             </p>
+          </FadeIn>
+          <ParallaxText offset={15}>
             <p
               className="font-display text-navy font-semibold leading-snug"
               style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)' }}
             >
-              Build a community where students learn how AI is applied in real-world settings and
-              explore the many ways it creates value across business.
+              Build a community where students learn how AI is showing up in professional settings
+              and get hands-on experience working with it.
             </p>
+          </ParallaxText>
+          <FadeIn delay={0.15}>
             <p className="mt-8 text-text-muted text-base leading-relaxed max-w-xl mx-auto">
-              The Applied AI Club at Penn State brings together students who are curious about AI
-              and want to learn and build together. Regular meetings and events begin Fall 2026.
+              Most of our members are still early in their exposure to how AI shows up in
+              professional settings. We run guest speaker sessions, hands-on workshops, and case
+              competitions to help bridge that gap. Regular meetings begin Fall 2026.
             </p>
           </FadeIn>
         </div>
@@ -115,13 +126,15 @@ export default function Home() {
             <p className="text-xs uppercase tracking-widest text-beaver-blue font-semibold mb-3 text-center">
               What We Do
             </p>
+          </FadeIn>
+          <ParallaxText offset={10}>
             <h2
               className="font-display text-navy font-bold leading-tight mb-14 text-center"
               style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
             >
-              Three ways to get involved
+              How we spend our time
             </h2>
-          </FadeIn>
+          </ParallaxText>
 
           <StaggerGrid className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {sections.map((section) => {
@@ -190,10 +203,10 @@ export default function Home() {
                   </p>
                   <div className="space-y-3">
                     {[
-                      'AI in consulting and professional services',
-                      'How startups use AI to compete',
-                      'AI in finance and risk modeling',
                       'What "using AI at work" actually looks like',
+                      'How AI changed the way you do your job',
+                      'What students should know before entering the workforce',
+                      'Lessons from adopting AI in your team or company',
                       'How to talk about AI skills in interviews',
                     ].map((topic) => (
                       <div key={topic} className="flex items-start gap-3">
