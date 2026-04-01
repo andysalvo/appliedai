@@ -332,7 +332,7 @@ export function PreviewPanel() {
   const [activeTab, setActiveTab] = useState<Tab>('preview')
 
   return (
-    <div id="previewPanel" className="flex-1 flex flex-col bg-surface relative z-5">
+    <div id="previewPanel" className="flex-1 flex flex-col bg-surface relative z-5 min-h-0">
       {/* Tabs */}
       <div id="previewTabs" className="flex border-b border-border bg-white">
         {tabs.map((tab) => (
@@ -351,7 +351,7 @@ export function PreviewPanel() {
       </div>
 
       {/* Content */}
-      <div id="previewContent" className="flex-1 p-4 overflow-auto relative">
+      <div id="previewContent" className="flex-1 p-4 overflow-y-auto min-h-0 relative">
         {activeTab === 'preview' && (
           <iframe
             id="previewIframe"
