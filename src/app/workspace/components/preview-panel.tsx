@@ -160,10 +160,8 @@ function RepoMapHome({ onNavigate }: { onNavigate: (view: RepoView) => void }) {
       >
         <div className="flex items-center justify-between">
           <div>
-            <h4 className="text-sm font-bold text-navy">Active Members</h4>
-            <p className="text-[11px] text-text-muted mt-1">
-              {agents.length} contributors to the website
-            </p>
+            <h4 className="text-sm font-bold text-navy">Agent List</h4>
+            <p className="text-[11px] text-text-muted mt-1">{agents.length} people in agents.ts</p>
           </div>
           <span className="text-text-muted text-lg">&rsaquo;</span>
         </div>
@@ -216,9 +214,9 @@ function MembersView({ onBack }: { onBack: () => void }) {
     <div className="h-full flex flex-col">
       <BackButton onClick={onBack} />
       <h3 className="font-display text-base text-navy mb-0.5">
-        Active Members <span className="text-pugh-blue font-normal text-sm">({agents.length})</span>
+        Agent List <span className="text-pugh-blue font-normal text-sm">({agents.length})</span>
       </h3>
-      <p className="text-[11px] text-text-muted mb-3">Everyone who contributes to the website</p>
+      <p className="text-[11px] text-text-muted mb-3">Everyone in agents.ts on the website</p>
       <div className="grid grid-cols-2 gap-3">
         {agents.map((agent) => (
           <div
@@ -231,12 +229,9 @@ function MembersView({ onBack }: { onBack: () => void }) {
               </span>
             </div>
             <div className="min-w-0">
-              <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-navy leading-tight truncate">
-                  {agent.name}
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
-              </div>
+              <span className="text-sm font-bold text-navy leading-tight truncate block">
+                {agent.name}
+              </span>
               <span className="text-xs text-text-muted">{agent.role}</span>
             </div>
           </div>
