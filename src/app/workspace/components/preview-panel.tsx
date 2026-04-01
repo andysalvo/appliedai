@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { FileText, BookOpen, Palette, PenTool, ChevronDown } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { agents } from '@/data/agents'
 
 type Tab = 'preview' | 'map' | 'compare'
 
@@ -139,10 +140,52 @@ function CollapsibleSection({
   )
 }
 
+function getInitials(name: string): string {
+  return name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
+}
+
 function RepoMap() {
   return (
     <LazyMotion features={domAnimation}>
       <div className="w-full h-full bg-white rounded-lg border border-border p-6 overflow-y-auto">
+        {/* Active Members */}
+        <div className="mb-6">
+          <h3 className="font-display text-base text-navy mb-0.5">
+            Active Members{' '}
+            <span className="text-pugh-blue font-normal text-sm">({agents.length})</span>
+          </h3>
+          <p className="text-[11px] text-text-muted mb-3">
+            Everyone who contributes to the website
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            {agents.map((agent) => (
+              <div
+                key={agent.email}
+                className="bg-white border border-border rounded-lg px-3 py-2.5 flex items-center gap-2.5"
+              >
+                <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-[11px] font-semibold">
+                    {getInitials(agent.name)}
+                  </span>
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm font-bold text-navy leading-tight truncate">
+                      {agent.name}
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
+                  </div>
+                  <span className="text-xs text-text-muted">{agent.role}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Club Documents - Artifact Cards */}
         <h3 className="font-display text-base text-navy mb-4">Club Documents</h3>
         <div className="grid grid-cols-2 gap-3 mb-6">
