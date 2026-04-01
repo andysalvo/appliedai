@@ -125,23 +125,19 @@ function CompareView() {
     <div className="flex w-full h-full gap-3">
       <div className="flex-1 rounded-lg overflow-hidden border border-border flex flex-col">
         <div className="px-3 py-2 text-[11px] font-semibold text-center bg-green-100 text-green-800">
-          Live Site
+          Live Site (appliedaipennstate.com)
         </div>
         <iframe
-          src="https://appliedaipennstate.com"
-          title="Live site"
+          src="https://appliedaipennstate.com/team/"
+          title="Live site team page"
           className="flex-1 w-full border-none"
         />
       </div>
       <div className="flex-1 rounded-lg overflow-hidden border border-border flex flex-col">
         <div className="px-3 py-2 text-[11px] font-semibold text-center bg-blue-100 text-blue-800">
-          Your Changes
+          Your Changes (local)
         </div>
-        <iframe
-          src="http://localhost:3000/team/"
-          title="Your changes"
-          className="flex-1 w-full border-none"
-        />
+        <iframe src="/team/" title="Your local team page" className="flex-1 w-full border-none" />
       </div>
     </div>
   )
