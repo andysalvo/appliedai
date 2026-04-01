@@ -5,6 +5,18 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    if (process.env.NODE_ENV === 'development') {
+      return [
+        {
+          source: '/',
+          destination: '/workspace/',
+          permanent: false,
+        },
+      ]
+    }
+    return []
+  },
 }
 
 export default nextConfig
