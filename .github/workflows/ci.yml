@@ -48,10 +48,10 @@ jobs:
 
       - name: Build Next.js site
         run: npm run build
-        # Note: Do NOT set NEXT_PUBLIC_BASE_PATH here
-        # The basePath is only needed for actual GitHub Pages deployment (in deploy.yml)
-        # E2E tests need to run against a build without basePath since the test server
-        # (serve -s out) doesn't understand basePath routing
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
 
       - name: Upload build output
         uses: actions/upload-artifact@v6
@@ -103,6 +103,9 @@ jobs:
         run: npm run test:e2e -- --shard=${{ matrix.shard }}/4
         env:
           CI: true
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
 
       - name: Upload Playwright report (on failure)
         if: failure()
