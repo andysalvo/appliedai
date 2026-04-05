@@ -52,7 +52,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npm run preview',
+    command: 'npx next start -p 3000',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
