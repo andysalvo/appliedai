@@ -1,7 +1,9 @@
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null
 
 const MAX_HISTORY = 12
 
@@ -107,6 +109,10 @@ GroupMe: https://groupme.com/join_group/111640691/x4UBh7SL
 - The website and all digital infrastructure were built by club members using AI tools`
 
 export async function POST(req: NextRequest) {
+  if (!openai) {
+    return Response.json({ error: 'Not configured' }, { status: 503 })
+  }
+
   try {
     const { messages } = await req.json()
 

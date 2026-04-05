@@ -5,11 +5,13 @@ import { buildSystemPrompt } from '../../lib/system-prompt'
 import { getToolDefinitions, executeTool } from '../../lib/tools'
 import type { AccessTier } from '../../lib/types'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null
 const MAX_HISTORY = 20
 
 export async function POST(req: NextRequest) {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production' || !openai) {
     return Response.json({ error: 'Not available' }, { status: 404 })
   }
 
