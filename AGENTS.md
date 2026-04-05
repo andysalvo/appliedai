@@ -115,7 +115,25 @@ appliedai/
   .linkinatorrc.json
 ```
 
-**Tech stack:** Next.js 16, React 19, TypeScript (strict), Tailwind CSS v4, framer-motion (Motion), Playwright, Jest, GitHub Pages
+**Tech stack:** Next.js 16, React 19, TypeScript (strict), Tailwind CSS v4, framer-motion (Motion), Playwright, Jest, Vercel
+
+**Workspace infrastructure:** The `/workspace` route is the contributor workspace (dev-only, runs in GitHub Codespaces). It connects to Supabase for contributor profiles, session tracking, and idea management. The Activity tab in the preview panel shows live data.
+
+**Codespace secrets required** (set in GitHub repo Settings > Secrets > Codespaces):
+
+- `OPENAI_API_KEY` (GPT-4o-mini for chat)
+- `NEXT_PUBLIC_SUPABASE_URL` (Polylogic Supabase instance, workspace\_ tables only)
+- `SUPABASE_SERVICE_ROLE_KEY` (service role for workspace reads/writes)
+
+**Workspace Supabase tables** (all workspace\_ prefixed, migrateable to separate instance):
+
+- `workspace_contributors` (GitHub username key, profile, embeddings)
+- `workspace_sessions` (per-session record, linked to contributor)
+- `workspace_ideas` (quality-gated ideas from sessions)
+
+**Canonical club document:** `docs/club.md` is the single source of truth for what the club is. Written in the v1.2 voice standard.
+
+**Programs (not pillars):** The club's activities are called "programs" (industry standard). Data in `src/data/programs.ts`. Three programs: Guest Speakers and Workshops, Labs, Tool Registry.
 
 ---
 

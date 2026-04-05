@@ -21,7 +21,7 @@ const tourSteps: TourStep[] = [
     target: null,
     title: 'This is your workspace',
     bodyHtml:
-      'Everything you see is the actual workspace you will use. On the left, you talk to the AI agent. On the right, you see the live website. Let me walk you through each part.',
+      'Everything you see is the actual workspace you will use. On the left, you talk to the AI agent. On the right, you see club activity, the repo map, and the live site. Let me walk you through each part.',
     label: 'Overview',
     tooltipPos: 'center',
   },
@@ -35,9 +35,9 @@ const tourSteps: TourStep[] = [
   },
   {
     target: 'previewContent',
-    title: 'This is the live site',
+    title: 'This is club activity',
     bodyHtml:
-      'This shows the real Applied AI website. When the agent makes a change, you will see it update here instantly. You can scroll around and check how everything looks.',
+      'This panel shows what is happening in the club. Ideas members have proposed, who is contributing, and recent sessions. Use the tabs to switch between activity, the repo map, and the live site.',
     label: 'Step 2 of 5',
     tooltipPos: 'left',
   },
@@ -61,7 +61,7 @@ const tourSteps: TourStep[] = [
     target: 'previewTabs',
     title: 'Compare your changes',
     bodyHtml:
-      'Use the <span class="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">Compare tab<span class="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">Shows the current live site next to your version side-by-side, so you can see exactly what\'s different before you submit.</span></span> to see the live site next to your version. The <span class="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">Repo Map<span class="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">A visual guide to every file in the project. Green files are ones you can edit, blue are pages only admins touch, gray is infrastructure.</span></span> shows you how the project is organized.',
+      'Use the tabs to explore. <span class="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">Activity<span class="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">Shows who is contributing, what ideas have been proposed, and recent sessions. This is the club\'s pulse.</span></span> shows the club\'s pulse. <span class="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">Repo Map<span class="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">A visual guide to every file in the project. Green files are ones you can edit, blue are pages only admins touch, gray is infrastructure.</span></span> shows how the project is organized. <span class="group/explain relative text-pa-sky underline decoration-dotted underline-offset-2 cursor-help whitespace-nowrap">Site Preview<span class="hidden group-hover/explain:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white px-3.5 py-2.5 rounded-lg text-xs leading-relaxed w-60 z-50 shadow-lg pointer-events-none">Shows the real Applied AI website. When the agent makes a change, you can check how it looks here.</span></span> shows the live website.',
     label: 'Step 5 of 5',
     tooltipPos: 'below',
   },

@@ -65,7 +65,7 @@ const readDataDef = {
       properties: {
         filename: {
           type: 'string',
-          enum: ['agents.ts', 'tools.ts', 'pillars.ts', 'navigation.ts'],
+          enum: ['agents.ts', 'tools.ts', 'programs.ts', 'navigation.ts'],
           description: 'Which data file to read',
         },
       },
@@ -232,7 +232,7 @@ ${capsStr},
 }
 
 function readData(args: { filename: string }): string {
-  const allowed = ['agents.ts', 'tools.ts', 'pillars.ts', 'navigation.ts']
+  const allowed = ['agents.ts', 'tools.ts', 'programs.ts', 'navigation.ts']
   if (!allowed.includes(args.filename)) {
     return `Cannot read ${args.filename}. Allowed: ${allowed.join(', ')}`
   }
