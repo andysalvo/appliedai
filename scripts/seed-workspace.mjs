@@ -25,7 +25,8 @@ async function seed() {
       skill_signals: ['next.js', 'claude-code', 'system-design', 'video-production'],
       session_count: 3,
       last_session_at: new Date().toISOString(),
-      contribution_summary: 'Programming Lead. Built the workspace agent, speaker page chat widget, and club infrastructure.',
+      contribution_summary:
+        'Programming Lead. Built the workspace agent, speaker page chat widget, and club infrastructure.',
     },
     {
       github_username: 'ryaneinzig',
@@ -65,7 +66,8 @@ async function seed() {
       skill_signals: ['figma', 'canva', 'midjourney'],
       session_count: 1,
       last_session_at: new Date().toISOString(),
-      contribution_summary: 'Recommended Napkin AI for the tool registry. Interested in creative AI tools.',
+      contribution_summary:
+        'Recommended Napkin AI for the tool registry. Interested in creative AI tools.',
     },
   ]
 
@@ -84,7 +86,7 @@ async function seed() {
     .from('workspace_contributors')
     .select('id, github_username')
 
-  const idMap = Object.fromEntries(contribs.map(c => [c.github_username, c.id]))
+  const idMap = Object.fromEntries(contribs.map((c) => [c.github_username, c.id]))
 
   // Seed sessions
   const sessions = [
@@ -96,7 +98,8 @@ async function seed() {
       tools_used: ['register_contributor', 'save_idea'],
       changes_made: ['Registered as contributor', 'Saved workshop idea'],
       files_modified: ['contributions/sessions/sarahchen99.md', 'contributions/contributors.md'],
-      conversation_summary: 'Sarah proposed a prompt engineering workshop where teams compete to get the best output from the same model. Categorized as an event for Friday afternoons.',
+      conversation_summary:
+        'Sarah proposed a prompt engineering workshop where teams compete to get the best output from the same model. Categorized as an event for Friday afternoons.',
     },
     {
       github_username: 'marcuswilliams',
@@ -106,7 +109,8 @@ async function seed() {
       tools_used: ['register_contributor', 'add_agent'],
       changes_made: ['Registered as contributor', 'Added to agent list as Labs Member'],
       files_modified: ['contributions/contributors.md', 'src/data/agents.ts'],
-      conversation_summary: 'Marcus added himself to the agent list as a Labs Member. Sophomore studying data science, wants to help with the labs program.',
+      conversation_summary:
+        'Marcus added himself to the agent list as a Labs Member. Sophomore studying data science, wants to help with the labs program.',
     },
     {
       github_username: 'priyapatel',
@@ -116,7 +120,8 @@ async function seed() {
       tools_used: ['register_contributor', 'add_tool'],
       changes_made: ['Registered as contributor', 'Added Napkin AI to creative tools'],
       files_modified: ['contributions/contributors.md', 'src/data/tools.ts'],
-      conversation_summary: 'Priya recommended Napkin AI, a creative tool that turns text into diagrams automatically. Added to the tool registry under creative category.',
+      conversation_summary:
+        'Priya recommended Napkin AI, a creative tool that turns text into diagrams automatically. Added to the tool registry under creative category.',
     },
   ]
 
@@ -131,7 +136,7 @@ async function seed() {
   }
   console.log(`  Seeded ${insertedSessions.length} sessions`)
 
-  const sessionMap = Object.fromEntries(insertedSessions.map(s => [s.github_username, s.id]))
+  const sessionMap = Object.fromEntries(insertedSessions.map((s) => [s.github_username, s.id]))
 
   // Seed ideas (linked to sessions via session_id)
   const ideas = [
@@ -140,7 +145,8 @@ async function seed() {
       session_id: sessionMap['sarahchen99'],
       title: 'Prompt Engineering Workshop',
       category: 'event',
-      description: 'A workshop where students learn to write better prompts for different AI tools. Teams compete to get the best output from the same model. Friday afternoon format.',
+      description:
+        'A workshop where students learn to write better prompts for different AI tools. Teams compete to get the best output from the same model. Friday afternoon format.',
       relevance_score: 5,
       votes: 0,
       endorsements: [],
@@ -150,7 +156,8 @@ async function seed() {
       session_id: sessionMap['priyapatel'],
       title: 'Visual AI Tools Showcase',
       category: 'event',
-      description: 'A session showcasing creative AI tools like Napkin AI, Midjourney, and others. Students bring a project and create something visual using AI tools.',
+      description:
+        'A session showcasing creative AI tools like Napkin AI, Midjourney, and others. Students bring a project and create something visual using AI tools.',
       relevance_score: 4,
       votes: 0,
       endorsements: [],
@@ -160,16 +167,15 @@ async function seed() {
       session_id: sessionMap['marcuswilliams'],
       title: 'Data Science with AI Lab Project',
       category: 'project',
-      description: 'A Labs project where members build a data analysis pipeline using AI-assisted tools. Real dataset, real insights, shipped as a team.',
+      description:
+        'A Labs project where members build a data analysis pipeline using AI-assisted tools. Real dataset, real insights, shipped as a team.',
       relevance_score: 4,
       votes: 0,
       endorsements: [],
     },
   ]
 
-  const { error: ideaError } = await supabase
-    .from('workspace_ideas')
-    .insert(ideas)
+  const { error: ideaError } = await supabase.from('workspace_ideas').insert(ideas)
 
   if (ideaError) {
     console.error('Ideas error:', ideaError.message)

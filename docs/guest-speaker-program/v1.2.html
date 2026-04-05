@@ -1,252 +1,293 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<style>
-  @page {
-    size: letter;
-    margin: 0;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    color: #1a1a1a;
-    width: 8.5in;
-    height: 11in;
-    display: flex;
-    flex-direction: column;
-    font-size: 11px;
-    line-height: 1.6;
-  }
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: letter;
+        margin: 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+        color: #1a1a1a;
+        width: 8.5in;
+        height: 11in;
+        display: flex;
+        flex-direction: column;
+        font-size: 11px;
+        line-height: 1.6;
+      }
 
-  /* Header - "Applied AI" bold left, club info right, thick navy rule below */
-  .header {
-    padding: 36px 60px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .header-left {
-    font-size: 20px;
-    font-weight: 700;
-    color: #001E44;
-    letter-spacing: -0.3px;
-  }
-  .header-right {
-    font-size: 10px;
-    color: #444;
-    text-align: right;
-    line-height: 1.5;
-  }
-  .header-rule {
-    margin: 12px 60px 0;
-    border: none;
-    border-top: 2.5px solid #001E44;
-  }
+      /* Header - "Applied AI" bold left, club info right, thick navy rule below */
+      .header {
+        padding: 36px 60px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .header-left {
+        font-size: 20px;
+        font-weight: 700;
+        color: #001e44;
+        letter-spacing: -0.3px;
+      }
+      .header-right {
+        font-size: 10px;
+        color: #444;
+        text-align: right;
+        line-height: 1.5;
+      }
+      .header-rule {
+        margin: 12px 60px 0;
+        border: none;
+        border-top: 2.5px solid #001e44;
+      }
 
-  /* Content area */
-  .content {
-    padding: 36px 60px 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+      /* Content area */
+      .content {
+        padding: 36px 60px 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
 
-  /* Big title - bold serif like the original */
-  h1 {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #001E44;
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
-  .subtitle {
-    font-size: 12px;
-    color: #555;
-    margin-bottom: 32px;
-  }
+      /* Big title - bold serif like the original */
+      h1 {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #001e44;
+        margin-bottom: 6px;
+        line-height: 1.2;
+      }
+      .subtitle {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 32px;
+      }
 
-  /* Section headings - bold serif, no underline */
-  h2 {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #001E44;
-    margin-bottom: 12px;
-  }
+      /* Section headings - bold serif, no underline */
+      h2 {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: #001e44;
+        margin-bottom: 12px;
+      }
 
-  p {
-    margin-bottom: 12px;
-  }
+      p {
+        margin-bottom: 12px;
+      }
 
-  .section {
-    margin-bottom: 24px;
-  }
+      .section {
+        margin-bottom: 24px;
+      }
 
-  /* Two-column boxes with light gray background and top border */
-  .two-col {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 28px;
-  }
-  .two-col .col {
-    flex: 1;
-    background: #f5f6f8;
-    padding: 18px 20px;
-    border-top: 2px solid #d0d3d8;
-  }
-  .col-title {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: #001E44;
-    margin-bottom: 10px;
-  }
-  .col ul {
-    list-style: disc;
-    padding-left: 16px;
-  }
-  .col ul li {
-    font-size: 10.5px;
-    line-height: 1.6;
-    margin-bottom: 6px;
-  }
+      /* Two-column boxes with light gray background and top border */
+      .two-col {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+      .two-col .col {
+        flex: 1;
+        background: #f5f6f8;
+        padding: 18px 20px;
+        border-top: 2px solid #d0d3d8;
+      }
+      .col-title {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: #001e44;
+        margin-bottom: 10px;
+      }
+      .col ul {
+        list-style: disc;
+        padding-left: 16px;
+      }
+      .col ul li {
+        font-size: 10.5px;
+        line-height: 1.6;
+        margin-bottom: 6px;
+      }
 
-  /* CTA box - rounded border like original */
-  .cta {
-    border: 1.5px solid #001E44;
-    border-radius: 6px;
-    padding: 12px 20px;
-    margin-bottom: 28px;
-    font-size: 11px;
-  }
-  .cta a {
-    color: #001E44;
-    text-decoration: none;
-    font-weight: 700;
-  }
+      /* CTA box - rounded border like original */
+      .cta {
+        border: 1.5px solid #001e44;
+        border-radius: 6px;
+        padding: 12px 20px;
+        margin-bottom: 28px;
+        font-size: 11px;
+      }
+      .cta a {
+        color: #001e44;
+        text-decoration: none;
+        font-weight: 700;
+      }
 
-  /* Footer */
-  .footer-area {
-    margin-top: auto;
-    padding-bottom: 24px;
-  }
-  .footer-rule {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin-bottom: 16px;
-  }
-  .board-connect {
-    display: flex;
-    justify-content: space-between;
-  }
-  .fc-left {
-    flex: 1;
-  }
-  .fc-right {
-    text-align: right;
-  }
-  .fc-title {
-    font-size: 11px;
-    font-weight: 700;
-    color: #001E44;
-    margin-bottom: 4px;
-  }
-  .fc-body {
-    font-size: 10px;
-    line-height: 1.7;
-    color: #444;
-  }
-  .fc-body a {
-    color: #444;
-    text-decoration: none;
-  }
+      /* Footer */
+      .footer-area {
+        margin-top: auto;
+        padding-bottom: 24px;
+      }
+      .footer-rule {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin-bottom: 16px;
+      }
+      .board-connect {
+        display: flex;
+        justify-content: space-between;
+      }
+      .fc-left {
+        flex: 1;
+      }
+      .fc-right {
+        text-align: right;
+      }
+      .fc-title {
+        font-size: 11px;
+        font-weight: 700;
+        color: #001e44;
+        margin-bottom: 4px;
+      }
+      .fc-body {
+        font-size: 10px;
+        line-height: 1.7;
+        color: #444;
+      }
+      .fc-body a {
+        color: #444;
+        text-decoration: none;
+      }
 
-  .disclaimer {
-    font-size: 8px;
-    color: #999;
-    margin-top: 14px;
-  }
-</style>
-</head>
-<body>
-
-<div class="header">
-  <div class="header-left">Applied AI</div>
-  <div class="header-right">
-    Applied AI Club at Penn State<br>
-    appliedaipennstate.com
-  </div>
-</div>
-<hr class="header-rule">
-
-<div class="content">
-  <h1>Guest Speaker Program</h1>
-  <div class="subtitle">An invitation to share how AI is shaping your work</div>
-
-  <div class="section">
-    <h2>About the Club</h2>
-    <p>The Applied AI Club is a student organization at Penn State dedicated to helping students understand how AI is changing the way businesses operate. Our membership is primarily based in the Smeal College of Business, with students across accounting, finance, marketing, supply chain, MIS, risk management, and management. We welcome students from all colleges and majors.</p>
-    <p>Most of our members are still early in their exposure to how AI and technology are used in professional settings. Guest speakers help bridge the gap between what students learn in the classroom and what professionals work with every day.</p>
-    <p>We run guest speaker sessions, hands-on workshops, and case competitions where members work through real business problems using AI. For members who want to go deeper, our Labs program takes on full application builds using industry-standard development workflows.</p>
-    <p>We begin formal meetings in Fall 2026 at Penn State University Park. We are currently in our pilot semester and scheduling our first speakers.</p>
-  </div>
-
-  <div class="section">
-    <h2>Who We Are Looking For</h2>
-    <p>Professionals whose work has been shaped by AI in some meaningful way. Technical expertise is valuable, and so is a perspective from someone whose role had little to do with technology until recently. What matters most is that you can communicate your experience in a way that a student with no background in your field could follow.</p>
-  </div>
-
-  <div class="two-col">
-    <div class="col">
-      <div class="col-title">What We Ask</div>
-      <ul>
-        <li>30 to 45 minutes of your time, including Q&A</li>
-        <li>Zoom or in person at Penn State University Park, whichever works best for your schedule</li>
-        <li>A brief description of what you would like to discuss, so we can share it with our members ahead of time</li>
-      </ul>
-    </div>
-    <div class="col">
-      <div class="col-title">What You Get</div>
-      <ul>
-        <li>An engaged audience of students who are actively learning AI and show up because they want to be there</li>
-        <li>A recorded copy of your session, if you would like one for your own use</li>
-        <li>A lasting connection to a student community that will remember the people who invested in them early</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="cta">
-    Interested? Sign up at <a href="https://appliedaipennstate.com/speakers">appliedaipennstate.com/speakers</a> or email <a href="mailto:appliedaipsu@gmail.com">appliedaipsu@gmail.com</a>
-  </div>
-
-  <div class="footer-area">
-    <hr class="footer-rule">
-    <div class="board-connect">
-      <div class="fc-left">
-        <div class="fc-title">Executive Board, Spring 2026</div>
-        <div class="fc-body">
-          Ryan Einzig, President <a href="mailto:rxe5177@psu.edu">rxe5177@psu.edu</a><br>
-          Evan Chappell, Vice-President <a href="mailto:evc5667@psu.edu">evc5667@psu.edu</a><br>
-          Andy Salvo, Programming Lead <a href="mailto:ajs10845@psu.edu">ajs10845@psu.edu</a><br>
-          Brody Bell, Treasurer <a href="mailto:bkb5921@psu.edu">bkb5921@psu.edu</a>
-        </div>
-      </div>
-      <div class="fc-right">
-        <div class="fc-title">Connect</div>
-        <div class="fc-body">
-          <a href="mailto:appliedaipsu@gmail.com">appliedaipsu@gmail.com</a><br>
-          <a href="https://appliedaipennstate.com">appliedaipennstate.com</a><br>
-          <a href="https://appliedaipennstate.com/speakers">appliedaipennstate.com/speakers</a>
-        </div>
+      .disclaimer {
+        font-size: 8px;
+        color: #999;
+        margin-top: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">Applied AI</div>
+      <div class="header-right">
+        Applied AI Club at Penn State<br />
+        appliedaipennstate.com
       </div>
     </div>
-    <div class="disclaimer">
-      This is a student organization and does not represent official Penn State positions. Applied AI Club at Penn State.
-    </div>
-  </div>
-</div>
+    <hr class="header-rule" />
 
-</body>
+    <div class="content">
+      <h1>Guest Speaker Program</h1>
+      <div class="subtitle">An invitation to share how AI is shaping your work</div>
+
+      <div class="section">
+        <h2>About the Club</h2>
+        <p>
+          The Applied AI Club is a student organization at Penn State dedicated to helping students
+          understand how AI is changing the way businesses operate. Our membership is primarily
+          based in the Smeal College of Business, with students across accounting, finance,
+          marketing, supply chain, MIS, risk management, and management. We welcome students from
+          all colleges and majors.
+        </p>
+        <p>
+          Most of our members are still early in their exposure to how AI and technology are used in
+          professional settings. Guest speakers help bridge the gap between what students learn in
+          the classroom and what professionals work with every day.
+        </p>
+        <p>
+          We run guest speaker sessions, hands-on workshops, and case competitions where members
+          work through real business problems using AI. For members who want to go deeper, our Labs
+          program takes on full application builds using industry-standard development workflows.
+        </p>
+        <p>
+          We begin formal meetings in Fall 2026 at Penn State University Park. We are currently in
+          our pilot semester and scheduling our first speakers.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Who We Are Looking For</h2>
+        <p>
+          Professionals whose work has been shaped by AI in some meaningful way. Technical expertise
+          is valuable, and so is a perspective from someone whose role had little to do with
+          technology until recently. What matters most is that you can communicate your experience
+          in a way that a student with no background in your field could follow.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="col">
+          <div class="col-title">What We Ask</div>
+          <ul>
+            <li>30 to 45 minutes of your time, including Q&A</li>
+            <li>
+              Zoom or in person at Penn State University Park, whichever works best for your
+              schedule
+            </li>
+            <li>
+              A brief description of what you would like to discuss, so we can share it with our
+              members ahead of time
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="col-title">What You Get</div>
+          <ul>
+            <li>
+              An engaged audience of students who are actively learning AI and show up because they
+              want to be there
+            </li>
+            <li>A recorded copy of your session, if you would like one for your own use</li>
+            <li>
+              A lasting connection to a student community that will remember the people who invested
+              in them early
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta">
+        Interested? Sign up at
+        <a href="https://appliedaipennstate.com/speakers">appliedaipennstate.com/speakers</a> or
+        email <a href="mailto:appliedaipsu@gmail.com">appliedaipsu@gmail.com</a>
+      </div>
+
+      <div class="footer-area">
+        <hr class="footer-rule" />
+        <div class="board-connect">
+          <div class="fc-left">
+            <div class="fc-title">Executive Board, Spring 2026</div>
+            <div class="fc-body">
+              Ryan Einzig, President <a href="mailto:rxe5177@psu.edu">rxe5177@psu.edu</a><br />
+              Evan Chappell, Vice-President <a href="mailto:evc5667@psu.edu">evc5667@psu.edu</a
+              ><br />
+              Andy Salvo, Programming Lead <a href="mailto:ajs10845@psu.edu">ajs10845@psu.edu</a
+              ><br />
+              Brody Bell, Treasurer <a href="mailto:bkb5921@psu.edu">bkb5921@psu.edu</a>
+            </div>
+          </div>
+          <div class="fc-right">
+            <div class="fc-title">Connect</div>
+            <div class="fc-body">
+              <a href="mailto:appliedaipsu@gmail.com">appliedaipsu@gmail.com</a><br />
+              <a href="https://appliedaipennstate.com">appliedaipennstate.com</a><br />
+              <a href="https://appliedaipennstate.com/speakers">appliedaipennstate.com/speakers</a>
+            </div>
+          </div>
+        </div>
+        <div class="disclaimer">
+          This is a student organization and does not represent official Penn State positions.
+          Applied AI Club at Penn State.
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
