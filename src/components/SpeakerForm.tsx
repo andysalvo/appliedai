@@ -18,8 +18,6 @@ export function SpeakerForm() {
     notes: '',
   })
 
-  const endpoint = process.env.NEXT_PUBLIC_SPEAKER_FORM_ENDPOINT
-
   function update(field: string, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }))
   }
@@ -32,26 +30,25 @@ export function SpeakerForm() {
     setErrorMsg('')
 
     try {
-      const formData = new FormData()
-      formData.append('source', 'speaker-interest')
-      formData.append('fullName', form.fullName)
-      formData.append('email', form.email)
-      formData.append('organization', form.organization)
-      formData.append('role', form.role)
-      formData.append('topic', form.topic)
-      formData.append('format', form.format)
-      formData.append('notes', form.notes)
-
-      await fetch(endpoint || '', {
+      const res = await fetch('/api/speakers/', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       })
 
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error || 'Submission failed')
+      }
+
       setState('success')
-    } catch {
+    } catch (err) {
       setState('error')
-      setErrorMsg('Something went wrong. Try again or email us at appliedaipsu@gmail.com.')
+      setErrorMsg(
+        err instanceof Error && err.message !== 'Submission failed'
+          ? err.message
+          : 'Something went wrong. Try again or email us at appliedaipsu@gmail.com.'
+      )
     }
   }
 
