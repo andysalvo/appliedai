@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { ChevronRight, X } from 'lucide-react'
 
@@ -74,14 +74,16 @@ export function TourOverlay({ onEnd }: TourOverlayProps) {
   const currentStep = tourSteps[step]
   const isLastStep = step === tourSteps.length - 1
 
-  // Compute rect synchronously during render -- avoids useEffect + setState cascade.
-  // Reading getBoundingClientRect during render is safe here because the tour targets
-  // are already mounted before the overlay renders.
-  const rect = useMemo(() => {
-    if (typeof window === 'undefined' || !currentStep.target) return null
+  const [rect, setRect] = useState<DOMRect | null>(null)
+
+  useEffect(() => {
+    if (!currentStep.target) {
+      setRect(null)
+      return
+    }
     const el = document.getElementById(currentStep.target)
-    return el ? el.getBoundingClientRect() : null
-  }, [step, currentStep.target]) // eslint-disable-line react-hooks/exhaustive-deps
+    setRect(el ? el.getBoundingClientRect() : null)
+  }, [step, currentStep.target])
 
   const next = () => {
     if (isLastStep) {

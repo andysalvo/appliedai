@@ -11,13 +11,16 @@ import { useChat } from './lib/use-chat'
 
 export default function WorkspacePage() {
   const chat = useChat()
-  const [showTour, setShowTour] = useState(() => {
-    if (typeof window === 'undefined') return false
-    return !localStorage.getItem('workspace-toured')
-  })
+  const [showTour, setShowTour] = useState(false)
   const [showEndModal, setShowEndModal] = useState(false)
   const [endStage, setEndStage] = useState<'confirm' | 'success'>('confirm')
   const [prUrl, setPrUrl] = useState('')
+
+  useEffect(() => {
+    if (!localStorage.getItem('workspace-toured')) {
+      setShowTour(true)
+    }
+  }, [])
 
   const handleTourEnd = useCallback(() => {
     setShowTour(false)
