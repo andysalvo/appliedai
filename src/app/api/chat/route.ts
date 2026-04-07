@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
     const recentMessages = messages.slice(-MAX_HISTORY)
 
     const stream = await openai.chat.completions.create({
-      model: process.env.KIMI_API_KEY ? 'kimi-k2.5' : 'gpt-4o-mini',
+      model: process.env.KIMI_API_KEY ? 'moonshot-v1-8k' : 'gpt-4o-mini',
       temperature: 0.3,
       max_tokens: 300,
       stream: true,
@@ -157,7 +157,7 @@ export async function POST(req: NextRequest) {
 
         // Generate contextual follow-up suggestions
         const followUp = await openai.chat.completions.create({
-          model: process.env.KIMI_API_KEY ? 'kimi-k2.5' : 'gpt-4o-mini',
+          model: process.env.KIMI_API_KEY ? 'moonshot-v1-8k' : 'gpt-4o-mini',
           temperature: 0.5,
           max_tokens: 80,
           messages: [
