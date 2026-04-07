@@ -61,7 +61,7 @@ export default function SpeakersPage() {
                 { icon: Clock, label: '30-45 minutes', detail: 'Including Q&A' },
                 { icon: Video, label: 'Zoom or in person', detail: 'Your preference' },
                 { icon: Users, label: 'All fields welcome', detail: 'Any industry, any role' },
-                { icon: Mic, label: 'Your experience', detail: 'Real insight over slides' },
+                { icon: Mic, label: 'Your experience', detail: 'Share what you know' },
               ].map((item) => (
                 <div
                   key={item.label}

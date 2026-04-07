@@ -1,9 +1,14 @@
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = process.env.OPENAI_API_KEY
-  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-  : null
+const openai = process.env.KIMI_API_KEY
+  ? new OpenAI({
+      apiKey: process.env.KIMI_API_KEY,
+      baseURL: 'https://api.moonshot.ai/v1',
+    })
+  : process.env.OPENAI_API_KEY
+    ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+    : null
 
 const MAX_HISTORY = 12
 
@@ -123,7 +128,7 @@ export async function POST(req: NextRequest) {
     const recentMessages = messages.slice(-MAX_HISTORY)
 
     const stream = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: process.env.KIMI_API_KEY ? 'kimi-k2.5' : 'gpt-4o-mini',
       temperature: 0.3,
       max_tokens: 300,
       stream: true,
@@ -152,7 +157,7 @@ export async function POST(req: NextRequest) {
 
         // Generate contextual follow-up suggestions
         const followUp = await openai.chat.completions.create({
-          model: 'gpt-4o-mini',
+          model: process.env.KIMI_API_KEY ? 'kimi-k2.5' : 'gpt-4o-mini',
           temperature: 0.5,
           max_tokens: 80,
           messages: [
