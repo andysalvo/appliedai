@@ -17,6 +17,8 @@ function doPost(e) {
     // Route to the correct tab based on source
     if (source === 'speaker-interest') {
       return handleSpeakerInterest(spreadsheet, data)
+    } else if (source === 'rsvp') {
+      return handleRSVP(spreadsheet, data)
     } else {
       return handleMailingList(spreadsheet, data)
     }
@@ -113,6 +115,41 @@ function handleSpeakerInterest(spreadsheet, data) {
   return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(
     ContentService.MimeType.JSON
   )
+}
+
+function handleRSVP(spreadsheet, data) {
+  var fullName = (data.fullName || '').trim()
+  var email = (data.email || '').trim().toLowerCase()
+  var event = (data.event || '').trim()
+
+  if (!fullName || !email) {
+    return ContentService.createTextOutput(
+      JSON.stringify({ success: false, error: 'Name and email are required.' })
+    ).setMimeType(ContentService.MimeType.JSON)
+  }
+
+  // Get or create the RSVP tab
+  var sheet = spreadsheet.getSheetByName('RSVPs')
+  if (!sheet) {
+    sheet = spreadsheet.insertSheet('RSVPs')
+    sheet.appendRow(['Timestamp', 'Full Name', 'Email', 'Event'])
+  }
+
+  // Check for duplicate email + event combo
+  var rows = sheet.getDataRange().getValues()
+  for (var i = 1; i < rows.length; i++) {
+    if (String(rows[i][2]).toLowerCase() === email && String(rows[i][3]) === event) {
+      return ContentService.createTextOutput(
+        JSON.stringify({ success: true, duplicate: true })
+      ).setMimeType(ContentService.MimeType.JSON)
+    }
+  }
+
+  sheet.appendRow([new Date().toISOString(), fullName, email, event])
+
+  return ContentService.createTextOutput(
+    JSON.stringify({ success: true })
+  ).setMimeType(ContentService.MimeType.JSON)
 }
 
 function doGet(e) {
