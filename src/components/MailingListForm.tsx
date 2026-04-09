@@ -11,8 +11,6 @@ export function MailingListForm() {
   const [email, setEmail] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
 
-  const endpoint = process.env.NEXT_PUBLIC_MAILING_LIST_ENDPOINT
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
 
@@ -22,20 +20,17 @@ export function MailingListForm() {
     setErrorMsg('')
 
     try {
-      // Google Apps Script requires form-encoded data submitted via no-cors
-      // to avoid redirect issues. We can't read the response, so we assume
-      // success if the fetch doesn't throw.
-      const formData = new FormData()
-      formData.append('firstName', firstName)
-      formData.append('email', email)
-
-      await fetch(endpoint || '', {
+      const res = await fetch('/api/signup', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, email, list: 'general' }),
       })
 
-      // no-cors means we can't read the response, so assume success
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error || 'Something went wrong.')
+      }
+
       setState('success')
       setFirstName('')
       setEmail('')

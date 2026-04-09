@@ -11,8 +11,6 @@ export function LabsMailingListForm() {
   const [email, setEmail] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
 
-  const endpoint = process.env.NEXT_PUBLIC_LABS_MAILING_LIST_ENDPOINT
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
 
@@ -22,15 +20,16 @@ export function LabsMailingListForm() {
     setErrorMsg('')
 
     try {
-      const formData = new FormData()
-      formData.append('firstName', firstName)
-      formData.append('email', email)
-
-      await fetch(endpoint || '', {
+      const res = await fetch('/api/signup', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, email, list: 'labs' }),
       })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error || 'Something went wrong.')
+      }
 
       setState('success')
       setFirstName('')
