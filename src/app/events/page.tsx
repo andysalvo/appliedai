@@ -5,12 +5,32 @@ import { SlideIn } from '@/components/ui/SlideIn'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { PressableButton } from '@/components/ui/PressableButton'
 import { RSVPForm } from '@/components/RSVPForm'
+import { EventStructuredData } from '@/components/EventStructuredData'
 
 export const metadata: Metadata = {
-  title: 'Events',
+  title: 'Upcoming Events at the Applied AI Club',
   description:
-    'Upcoming events from the Applied AI Club at Penn State. Guest speakers, workshops, and meetings open to all students.',
+    'Upcoming events at the Applied AI Club at Penn State. First general meeting April 20, 2026. Guest speakers, workshops, and case competitions open to every Penn State student.',
+  alternates: { canonical: 'https://appliedaipennstate.com/events' },
+  openGraph: {
+    title: 'Upcoming Events at the Applied AI Club at Penn State',
+    description:
+      'First general meeting April 20, 2026. Guest speakers, workshops, and case competitions open to every Penn State student.',
+    url: 'https://appliedaipennstate.com/events',
+  },
 }
+
+const structuredEvents = [
+  {
+    id: 'first-general-meeting-2026-04-20',
+    name: 'Applied AI Club First General Meeting',
+    description:
+      'First general meeting of the Applied AI Club at Penn State. Meet the executive board, learn how the club will operate in Fall 2026, and find out how to get involved. Open to every Penn State student.',
+    startDate: '2026-04-20T18:00:00-04:00',
+    endDate: '2026-04-20T19:00:00-04:00',
+    location: 'Pennsylvania State University, University Park',
+  },
+]
 
 interface Event {
   title: string
@@ -33,6 +53,7 @@ const events: Event[] = [
 export default function EventsPage() {
   return (
     <>
+      <EventStructuredData events={structuredEvents} />
       {/* ─── HERO ─── */}
       <section className="bg-navy relative overflow-hidden py-14 md:py-20">
         <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-beaver-blue/10 blur-[150px]" />

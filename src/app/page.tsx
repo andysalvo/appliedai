@@ -40,10 +40,11 @@ export default function Home() {
         <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-beaver-blue/10 blur-[150px]" />
 
         <div className="relative max-w-5xl mx-auto px-6 py-20 md:py-24 w-full text-center">
+          <h1 className="sr-only">Applied AI Club at Penn State</h1>
           <FadeIn>
             <Image
               src={assetPath('/images/logo.png')}
-              alt="Applied AI"
+              alt="Applied AI Club at Penn State"
               width={822}
               height={205}
               className="w-[min(80vw,420px)] h-auto mx-auto brightness-0 invert"

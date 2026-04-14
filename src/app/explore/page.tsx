@@ -8,8 +8,16 @@ import { PressableButton } from '@/components/ui/PressableButton'
 import { tools, categories } from '@/data/tools'
 
 export const metadata: Metadata = {
-  title: 'Explore AI',
-  description: 'A list of essential AI tools worth knowing, organized for students at every level.',
+  title: 'AI Tools for Penn State Students',
+  description:
+    'A curated directory of AI tools worth knowing, maintained by the Applied AI Club at Penn State. Assistants, research tools, developer tools, creative tools, local models, and code editors. Written by students for students.',
+  alternates: { canonical: 'https://appliedaipennstate.com/explore' },
+  openGraph: {
+    title: 'AI Tools Directory for Penn State Students',
+    description:
+      'Curated by the Applied AI Club at Penn State. Assistants, research tools, developer tools, and more.',
+    url: 'https://appliedaipennstate.com/explore',
+  },
 }
 
 const logoDomains: Record<string, string> = {

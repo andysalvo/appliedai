@@ -10,8 +10,15 @@ import { PressableButton } from '@/components/ui/PressableButton'
 import { agents as team, agentsSemester as teamSemester } from '@/data/agents'
 
 export const metadata: Metadata = {
-  title: 'Team',
-  description: 'Meet the Applied AI executive board and learn how to get involved.',
+  title: 'Executive Board and How to Join',
+  description:
+    'Meet the Applied AI Club executive board at Penn State and learn how to get involved. Open to every Penn State student regardless of major.',
+  alternates: { canonical: 'https://appliedaipennstate.com/team' },
+  openGraph: {
+    title: 'Executive Board of the Applied AI Club at Penn State',
+    description: 'Meet the Applied AI Club executive board at Penn State and learn how to join.',
+    url: 'https://appliedaipennstate.com/team',
+  },
 }
 
 export default function TeamPage() {

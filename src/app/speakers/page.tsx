@@ -3,10 +3,19 @@ import { FadeIn } from '@/components/ui/FadeIn'
 import { SpeakerForm } from '@/components/SpeakerForm'
 import { SpeakerChat } from '@/components/SpeakerChat'
 
-export const metadata = {
-  title: 'Speak at Applied AI',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Speak at the Applied AI Club',
   description:
-    'We are looking for professionals from any field who can share how AI has changed the way they work. 30-45 minutes, Zoom or in person at Penn State.',
+    'The Applied AI Club at Penn State is looking for professionals from any field who can share how AI has changed the way they work. 30 to 45 minutes, Zoom or in person at Penn State. Open guest speaker program.',
+  alternates: { canonical: 'https://appliedaipennstate.com/speakers' },
+  openGraph: {
+    title: 'Speak at the Applied AI Club at Penn State',
+    description:
+      'Share how AI has changed the way you work with Penn State students. 30 to 45 minutes, Zoom or in person.',
+    url: 'https://appliedaipennstate.com/speakers',
+  },
 }
 
 export default function SpeakersPage() {

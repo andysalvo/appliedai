@@ -10,16 +10,58 @@ import { StaggerGrid, StaggerItem } from '@/components/ui/StaggerGrid'
 import { PressableButton } from '@/components/ui/PressableButton'
 import { ParallaxText } from '@/components/ui/ParallaxText'
 import { team, teamSemester } from '@/data/team'
+import { FAQStructuredData } from '@/components/FAQStructuredData'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About the Applied AI Club',
   description:
-    'The Applied AI Club at Penn State runs guest speaker sessions, hands-on workshops, case competitions, and a Labs program for members who want to go deeper.',
+    'What the Applied AI Club at Penn State does: guest speakers, hands-on workshops, case competitions, and Applied AI Labs. Open to every Penn State student regardless of major or experience.',
+  alternates: { canonical: 'https://appliedaipennstate.com/about' },
+  openGraph: {
+    title: 'About the Applied AI Club at Penn State',
+    description:
+      'Guest speakers, hands-on workshops, case competitions, and Applied AI Labs. Open to every Penn State student.',
+    url: 'https://appliedaipennstate.com/about',
+  },
 }
+
+const aboutFaqs = [
+  {
+    question: 'Is there an AI club at Penn State?',
+    answer:
+      'Yes. The Applied AI Club at Penn State is a student organization that runs guest speakers, hands-on workshops, case competitions, and a Labs program where members build real applications with AI. It is open to every Penn State student regardless of major or prior experience.',
+  },
+  {
+    question: 'How do I join the Applied AI Club at Penn State?',
+    answer:
+      'Join the mailing list at appliedaipennstate.com, add the club GroupMe, or come to the next general meeting. There is no application or prior experience required. The first general meeting is April 20, 2026, and regular meetings begin Fall 2026.',
+  },
+  {
+    question: 'When does the Applied AI Club meet?',
+    answer:
+      'The first general meeting is April 20, 2026, at 6:00 PM. Regular meetings begin Fall 2026 at Penn State University Park.',
+  },
+  {
+    question: 'Who can join the Applied AI Club at Penn State?',
+    answer:
+      'Every Penn State student is welcome regardless of major, college, or AI experience. Members come from Smeal, Engineering, Liberal Arts, IST, and across the university. Whether you have never used AI before or build applications with it already, there is a place for you.',
+  },
+  {
+    question: 'What is Applied AI Labs?',
+    answer:
+      'Applied AI Labs is the project track of the Applied AI Club. Members form teams to build real applications with AI using industry-standard development workflows including Claude Code, Next.js, GitHub Actions, and Playwright. The first Labs project is the Student AI Hub.',
+  },
+  {
+    question: 'Does Penn State have an AI student organization?',
+    answer:
+      'Yes. The Applied AI Club at Penn State is a student organization focused on helping students learn how AI shows up in professional work and giving them hands-on experience using it.',
+  },
+]
 
 export default function WhatWeDoPage() {
   return (
     <>
+      <FAQStructuredData faqs={aboutFaqs} />
       {/* ─── HERO ─── */}
       <section className="bg-navy relative overflow-hidden py-14 md:py-20">
         <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-beaver-blue/10 blur-[150px]" />

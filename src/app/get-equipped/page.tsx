@@ -18,9 +18,15 @@ import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { PressableButton } from '@/components/ui/PressableButton'
 
 export const metadata: Metadata = {
-  title: 'Get Equipped',
+  title: 'Free AI Tools for Penn State Students',
   description:
-    'Free AI and software tools available to every Penn State student with a psu.edu email.',
+    'Every free AI and software tool available to Penn State students with a psu.edu email. Microsoft Copilot, Microsoft 365, GitHub Student Pack, and more. Maintained by the Applied AI Club at Penn State.',
+  alternates: { canonical: 'https://appliedaipennstate.com/get-equipped' },
+  openGraph: {
+    title: 'Free AI Tools for Penn State Students',
+    description: 'Every free AI tool available to Penn State students with a psu.edu email.',
+    url: 'https://appliedaipennstate.com/get-equipped',
+  },
 }
 
 const freeTools = [

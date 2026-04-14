@@ -19,8 +19,16 @@ import { LabsMailingListForm } from '@/components/LabsMailingListForm'
 import { FloatingShapes } from '@/components/ui/FloatingShapes'
 
 export const metadata: Metadata = {
-  title: 'Labs',
-  description: 'Applied AI Labs is where Penn State students build real things with AI. Join us.',
+  title: 'Applied AI Labs',
+  description:
+    'Applied AI Labs is where Penn State students build real AI applications using industry-standard development workflows. Claude Code, Next.js, GitHub Actions, Playwright. Form a team, pick a project, and ship it.',
+  alternates: { canonical: 'https://appliedaipennstate.com/labs' },
+  openGraph: {
+    title: 'Applied AI Labs at Penn State',
+    description:
+      'Build real AI applications with industry-standard development workflows at Penn State.',
+    url: 'https://appliedaipennstate.com/labs',
+  },
 }
 
 const stack = [
